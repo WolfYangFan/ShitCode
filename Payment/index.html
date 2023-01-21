@@ -27,20 +27,23 @@
                 <div class="adaptar-selector">
                     <div class="adaptar-selector-title">
                         <span>选择支付方式</span>
-                        <a class="mdui-btn adaptar-selector-wake-btn" v-if="currentAdaptarData.wake_url" :href="currentAdaptarData.wake_url">唤醒</a>
+                        <a class="mdui-btn adaptar-selector-wake-btn" v-if="currentAdaptarData.wake_url"
+                            :href="currentAdaptarData.wake_url">唤醒</a>
                     </div>
                     <div class="adaptar-selector-wake" v-if="currentAdaptarData.wake_url">
                         手机端可点击唤醒快捷支付。
                     </div>
                     <div class="adaptar-selector-options">
                         <div class="adaptar-selector-option" v-for="(adaptarName, adaptar) in adaptars">
-                            <input type="radio" :value="adaptar" :id="adaptar" name="adaptar" v-model="input" hidden></input>
+                            <input type="radio" :value="adaptar" :id="adaptar" name="adaptar" v-model="input"
+                                hidden></input>
                             <label :for="adaptar">{{ adaptarName }}</label>
                         </div>
                     </div>
                     <div class="adaptar-selector-confirm">
                         <button class="mdui-btn mdui-btn-block mdui-ripple mdui-ripple-white" @click="selectAdaptar">
-                            {{ input == currentAdaptar ? orderExpireTime > 0 ? (!orderStatus) ? '请在' + orderExpireTime + '秒内完成支付' : '已支付' : '订单已过期' : '立即支付¥' + order.amount }}
+                            {{ input == currentAdaptar ? orderExpireTime > 0 ? (!orderStatus) ? '请在' + orderExpireTime +
+                            '秒内完成支付' : '已支付' : '订单已过期' : '立即支付¥' + order.amount }}
                         </button>
                     </div>
                 </div>
