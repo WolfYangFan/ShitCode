@@ -1,0 +1,16 @@
+{
+	"code": 200,
+	"app": {
+		"name": "minecraft97323",
+		"url": "https:\/\/xiaozhu2007.netlify.app\/"
+	},
+	"order": {
+		"amount": 666,
+		"expire_at": 114514191810
+	},
+	"adaptars": {
+		"alipay": "支付宝",
+		"wechat": "微信支付",
+        "bank": "银行"
+	}
+}

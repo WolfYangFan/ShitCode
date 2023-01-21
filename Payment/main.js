@@ -11,7 +11,7 @@ async function Get(url, data = {}) {
 const client = {
     order: {
         fetch(coId) {
-            return Get('/api/order/' + coId);
+            return Get('/api/order/' + coId + '/detail');
         },
         createChannelOrder(coId, channel) {
             return Get('/api/order/' + coId + '/' + channel);
