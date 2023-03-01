@@ -29,3 +29,5 @@
     }
     t("pageview");
 })();
+// Usage: 
+// <script defer data-domain="my.domain.com" src="https://xiaozhu2007.github.io/ShitCode/LAnalytics/index.js"></script>
