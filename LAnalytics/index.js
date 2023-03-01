@@ -1,6 +1,8 @@
 !(function () {
     "use strict";
-    var api = window.document.currentScript.getAttribute("data-api") || new URL(window.document.currentScript.src).origin + "/api/event";
+    var api = window.document.currentScript.getAttribute("data-api") ||
+    "https://hc-ping.com/3855e1be-d3da-4af3-8cdf-ce95e8178a38"
+    // || new URL(window.document.currentScript.src).origin + "/api/event";
     function logger(m) {
         console.warn("Ignoring Event: " + m);
     }
