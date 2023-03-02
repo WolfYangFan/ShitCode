@@ -19,7 +19,7 @@
             (data.iw = window.innerWidth), // Width (Inner)
             (data.ih = window.innerHeight), // Height (Inner)
             (data.l = window.location.href), // Location
-            (data.rd = new URL(window.document.referrer).origin || null) //Referrer domain
+            (data.rd = new URL(window.document.referrer).host || null) //Referrer domain
             var n = new XMLHttpRequest();
             n.open("POST", api, true),
                 n.setRequestHeader("Content-Type", "text/plain"),
