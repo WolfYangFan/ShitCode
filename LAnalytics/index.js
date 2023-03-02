@@ -1,12 +1,11 @@
 !(function () {
     "use strict";
     var api = window.document.currentScript.getAttribute("data-api") ||
-        "https://hc-ping.com/3855e1be-d3da-4af3-8cdf-ce95e8178a38"
-    // || new URL(window.document.currentScript.src).origin + "/api/event";
+        new URL(window.document.currentScript.src).origin + "/_api/collect";
     function logger(m) {
         console.warn("Ignoring Event: " + m);
     }
-    function t(event) {
+    function track(event) {
         if (/^localhost$|^127(\.[0-9]+){0,2}\.[0-9]+$|^\[::1?\]$/.test(window.location.hostname) || "file:" === window.location.protocol) return logger("localhost");
         if (
             !window._phantom ||
@@ -16,18 +15,21 @@
         ) {
             var data = {};
             (data.e = event),
-                (data.l = window.location.href), // Location
-                (data.d = window.document.currentScript.getAttribute("data-domain")), // Domain
-                (data.r = window.document.referrer || null), // Referrer
-                (data.w = window.innerWidth), // Width (Inner)
-                (data.h = window.innerHeight) // Height (Inner)
+            (data.d = window.document.currentScript.getAttribute("data-domain")), // Domain
+            (data.iw = window.innerWidth), // Width (Inner)
+            (data.ih = window.innerHeight), // Height (Inner)
+            (data.l = window.location.href), // Location
+            (data.rd = new URL(window.document.referrer).origin || null) //Referrer domain
             var n = new XMLHttpRequest();
             n.open("POST", api, true),
                 n.setRequestHeader("Content-Type", "text/plain"),
                 n.send(JSON.stringify(data))
+        } else {
+            return logger("Automation");
         }
     }
-    t("pageview");
+    window._la = track;
+    track("pageview");
 })();
-// Usage: 
-// <script defer data-domain="my.domain.com" src="https://xiaozhu2007.github.io/ShitCode/LAnalytics/index.js"></script>
+// Test Env. Usage: 
+// <script defer data-api="https://hc-ping.com/3855e1be-d3da-4af3-8cdf-ce95e8178a38" data-domain="my.domain.com" src="https://xiaozhu2007.github.io/ShitCode/LAnalytics/index.js"></script>
