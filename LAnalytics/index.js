@@ -14,16 +14,16 @@
             !window.Cypress
         ) {
             var data = {};
-            (data.e = event),
             (data.d = window.document.currentScript.getAttribute("data-domain")), // Domain
+            (data.e = event), // Event name
             (data.iw = window.innerWidth), // Width (Inner)
             (data.ih = window.innerHeight), // Height (Inner)
             (data.l = window.location.href), // Location
             (data.rd = new URL(window.document.referrer).host || null) //Referrer domain
-            var n = new XMLHttpRequest();
-            n.open("POST", api, true),
-                n.setRequestHeader("Content-Type", "text/plain"),
-                n.send(JSON.stringify(data))
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", api, true),
+            xhr.setRequestHeader("Content-Type", "text/plain"),
+            xhr.send(JSON.stringify(data))
         } else {
             return logger("Automation");
         }
