@@ -21,12 +21,12 @@
             var data = {};
             data.d = data_domain // Domain
             data.e = eventName // Event name
-            data.ua = navigator.userAgent || null // User-Agent
             data.l = window.location.href // Location
             data.rd = new URL(window.document.referrer)
                 .host || null //Referrer domain
+            data.ua = navigator.userAgent || null // User-Agent
             if (options && options.meta) {
-                payload.m = JSON.stringify(options.meta)
+                data.m = JSON.stringify(options.meta)
             }
             var xhr = new XMLHttpRequest();
             xhr.open('POST', endpoint, true)
@@ -47,7 +47,7 @@
         lastPage = location.pathname
         trigger('pageview')
     }
-    page();
+    window.addEventListener('load', page)
 })();
 // Test Env. Usage: 
 // <script defer data-api="https://hc-ping.com/3855e1be-d3da-4af3-8cdf-ce95e8178a38" data-domain="my.domain.com" src="https://xiaozhu2007.github.io/ShitCode/LAnalytics/index.js"></script>
