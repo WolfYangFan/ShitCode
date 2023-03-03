@@ -1,4 +1,4 @@
-!(function() {
+(function() {
     'use strict';
     var endpoint = window.document.currentScript.getAttribute('data-api') ||
       new URL(window.document.currentScript.src)
@@ -37,14 +37,9 @@
         }
       }
     }
-
-    let lastPage;
     window._la = trigger
-    var queue = (window._la && window._la.q) || []
-    for (var i = 0; i < queue.length; i++) {
-      trigger.apply(this, queue[i])
-    }
   
+    let lastPage;
     function page() {
       lastPage = location.pathname
       trigger('pageview')
