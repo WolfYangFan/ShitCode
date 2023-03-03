@@ -30,8 +30,8 @@
         xhr.open('POST', endpoint, true)
         xhr.setRequestHeader('Content-Type', 'text/plain')
         xhr.send(JSON.stringify(data))
-        request.onreadystatechange = function() {
-          if (request.readyState === 4) {
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
             options && options.callback && options.callback()
           }
         }
