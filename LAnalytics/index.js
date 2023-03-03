@@ -5,7 +5,7 @@
       .origin + '/_api/collect';
   
     function warn(reason) {
-      console.warn('Ignoring Event: ' + reason);
+      console.warn('Ignoring Event: ' + reason)
     }
   
     function trigger(eventName, options) {
@@ -37,8 +37,10 @@
         }
       }
     }
-    var queue = (window._la && window._la.q) || []
+
+    let lastPage;
     window._la = trigger
+    var queue = (window._la && window._la.q) || []
     for (var i = 0; i < queue.length; i++) {
       trigger.apply(this, queue[i])
     }
