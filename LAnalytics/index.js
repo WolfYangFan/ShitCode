@@ -41,13 +41,8 @@
     }
     window._la = trigger
 
-    let lastPage;
-
-    function page() {
-        lastPage = location.pathname
-        trigger('pageview')
-    }
-    window.addEventListener('load', page)
+    window.addEventListener('load', trigger('pageview'))
+    window.addEventListener('close', trigger('pageclose'))
 })();
 // Test Env. Usage: 
 // <script defer data-api="https://hc-ping.com/3855e1be-d3da-4af3-8cdf-ce95e8178a38" data-domain="my.domain.com" src="https://xiaozhu2007.github.io/ShitCode/LAnalytics/index.js"></script>
