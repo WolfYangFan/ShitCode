@@ -10,7 +10,7 @@
 
     <script>
       function onClick() {
-        var t = document.getElementById("targrt").innerText;
+        var t = document.getElementById("targrt").value;
         eval(
           `fetch("https://api.globalping.io/v1/measurements",{headers:{accept:"*/*","accept-language":"zh-TW,zh;q=0.9,en;q=0.8","cache-control":"no-cache","content-type":"application/json"},body:'{"type":"http","target":"${t}","measurementOptions":{"protocol":"HTTP","request":{"method":"GET","query":"?1"}},"locations":[],"inProgressUpdates":true,"limit":500}',method:"POST",mode:"cors",credentials:"omit"});`
         );
