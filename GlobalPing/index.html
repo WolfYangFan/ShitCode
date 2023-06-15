@@ -313,10 +313,8 @@
             locations = [],
             combineFilters
           ) {
-            const url = "/v1/measurements";
-
+            const url = "https://api.globalping.io/v1/measurements";
             const { type, target, ...measurementOptions } = measurement;
-
             const body = {
               type,
               target,
@@ -352,7 +350,7 @@
             }
           },
           async fetchMeasurement() {
-            const url = `/v1/measurements/${this.measurementId}`;
+            const url = `https://api.globalping.io/v1/measurements/${this.measurementId}`;
 
             const response = await fetch(url);
 
@@ -669,7 +667,7 @@
             const adminKey = new URLSearchParams(window.location.search).get(
               "adminkey"
             );
-            const url = `/v1/probes?adminkey=${adminKey}`;
+            const url = `https://api.globalping.io/v1/probes?adminkey=${adminKey}`;
             const probes = await (await fetch(url)).json();
             const sortNonReadyFirst = (probe1, probe2) => {
               if (probe1.status === "ready" && probe2.status !== "ready") {
@@ -680,7 +678,6 @@
               ) {
                 return -1;
               }
-
               return 0;
             };
             this.probes = probes.sort(sortNonReadyFirst);
