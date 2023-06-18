@@ -12,10 +12,35 @@
     <script>
 function onClick() {
   var t = document.getElementById("targrt").value;
-  eval(
-    `fetch("https://api.globalping.io/v1/measurements",{headers:{accept:"*/*","accept-language":"zh-TW,zh;q=0.9,en;q=0.8","cache-control":"no-cache","content-type":"application/json"},body:'{"type":"http","target":"${t}","measurementOptions":{"protocol":"HTTP","request":{"method":"GET","query":"?1"}},"locations":[],"inProgressUpdates":true,"limit":500}',method:"POST",mode:"cors",credentials:"omit"});`
-  ); // GlobalPing
-  
+  const axios = require('axios');
+  axios.post(
+    'https://api.globalping.io/v1/measurements',
+    {
+        'type': 'http',
+        'target': t,
+        'measurementOptions': {
+            'protocol': 'HTTPS',
+            'request': {
+                'method': 'GET'
+            }
+        },
+        'locations': [],
+        'inProgressUpdates': true,
+        'limit': 500
+    },
+    {
+        headers: {
+            'authority': 'api.globalping.io',
+            'accept': '*/*',
+            'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8',
+            'cache-control': 'no-cache',
+            'content-type': 'application/json',
+            'referer': 'https://google.com/',
+            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36'
+        }
+    }
+); // GlobalPing
+  /*
 axios.post(
     'https://www.itdog.cn/http/',
     new URLSearchParams({
@@ -39,6 +64,7 @@ axios.post(
         }
     }
 ); // ITDOG.CN
+      */
 }
     </script>
   </body>
