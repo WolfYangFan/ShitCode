@@ -16,7 +16,7 @@ function onClick() {
     `fetch("https://api.globalping.io/v1/measurements",{headers:{accept:"*/*","accept-language":"zh-TW,zh;q=0.9,en;q=0.8","cache-control":"no-cache","content-type":"application/json"},body:'{"type":"http","target":"${t}","measurementOptions":{"protocol":"HTTP","request":{"method":"GET","query":"?1"}},"locations":[],"inProgressUpdates":true,"limit":500}',method:"POST",mode:"cors",credentials:"omit"});`
   ); // GlobalPing
   
-const response = await axios.post(
+axios.post(
     'https://www.itdog.cn/http/',
     new URLSearchParams({
         'line': '',
