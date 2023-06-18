@@ -16,32 +16,29 @@
     <script>
       function onClick() {
         var t = document.getElementById("targrt").value;
-        axios
-          .post(
-            "https://api.globalping.io/v1/measurements",
-            {
-              type: "http",
-              target: t,
-              measurementOptions: {
-                protocol: "HTTPS",
-                request: {
-                  method: "GET"
-                }
-              },
-              locations: [],
-              inProgressUpdates: true,
-              limit: 500
-            },
-            {
-              headers: {
-                authority: "api.globalping.io",
-                accept: "*/*",
-                "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
-                "cache-control": "no-cache",
-                "content-type": "application/json"
-              }
+        var data = {
+          type: "http",
+          target: t,
+          measurementOptions: {
+            protocol: "HTTPS",
+            request: {
+              method: "GET"
             }
-          )
+          },
+          locations: [],
+          inProgressUpdates: true,
+          limit: 500
+        };
+        axios
+          .post("https://api.globalping.io/v1/measurements", data, {
+            headers: {
+              authority: "api.globalping.io",
+              accept: "*/*",
+              "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+              "cache-control": "no-cache",
+              "content-type": "application/json"
+            }
+          })
           .catch(function (error) {
             if (error.response) {
               // The request was made and the server responded with a status code
