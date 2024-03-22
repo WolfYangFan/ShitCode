@@ -1,0 +1,168 @@
+version: 4.3
+prefix: "&4&LU&c&LA&4&LB&r &7» "
+onping: # <-- 仅适用于 bungeecord!
+  normal: "&c&l◆ &f&l$1&7/&c&l$2"
+  ready: "&f&l◆ &c&l已验证!"
+commands:
+  perms: "&f你没有 &cpermission&f 这么做!"
+  cleared: "&c$1&f 已被&c清除! "
+  added: "&c$1&f 已添加到 &c$2&f 中"
+  removed: "&c$1&f 已从 &c$2&f 中删除"
+  wrong-args: "&f无效参数! 使用 &c/uab help!"
+  no-blacklist: "&c此 ID 似乎与任何内容无关!"
+  invalid-log-value: "&c所提供的值不与日志关联!"
+  reload: "&f配置已重新加载! 不推荐使用此命令, 可能会导致问题, 建议重新启动服务器!"
+analyzer:
+  increase: "&a↑ &7- &f%old% &c➜ &f%new% &7- &c%perc%%"
+  decrease: "&c↓ &7- &f%old% &c➜ &f%new% &7- &c%perc%%"
+notifications:
+  action: "&a切换 ActionBar 通知!"
+  title: "&a切换 Title 通知!"
+  bossbar: "&a切换 Bossbar 通知"
+#(!) PLACEHOLDERS (!)
+# actionbar/title/stats 允许值
+# %bots% - 返回 botpersecond
+# %queue% - 返回 queue
+# %pings% - 返回 pingpersecond
+# %whitelist% - 返回 whitelist 大小
+# %blacklist% - 返回 blacklist 大小
+# %type% - 返回 current attacktype
+# %checks% - 返回 checkspersecond
+# %latency% - 返回 server latency
+# %packets% - 返回 packetspersecond
+# %totalpackets% - 返回 totalpackets
+# %totalbots% - 返回 totalbots
+# %totalpings% - 返回 totalpings
+# %prefix% - 返回 prefix
+# %underverification% - 返回 player under verification
+actionbar:
+  offline: "%prefix%&c加入&7/&cPing &f%bots%&7/&f%pings% &4- &c验证 &f%underverification% &4- &c白名单 &f%whitelist% » &c&l%type%"
+  antibot: "%prefix%&c假人&7/&cPing &f%bots%&7/&f%pings% &4- &c黑名单&7/&c等待&7/&c白名单 &f%blacklist%&7/&f%queue%&7/&f%whitelist% &4- &c验证 &f%underverification% » &c&l%type%"
+  packets: "%prefix%&c数据包 &f%packets%/sec &4- &c已屏蔽 &f%totalpackets% &4- &c验证 &f%underverification% » &c&l%type%"
+title:
+  title: "&f%totalbots% &c被阻止的假人"
+  subtitle: "&f%blacklist% &c当前黑名单"
+stats:
+  - "&c当前会话统计:"
+  - ""
+  - "&c假人阻止 &f%totalbots%"
+  - "&c总Ping &f%totalpings%"
+  - "&c总数据包 &f%totalpackets%"
+  - "&c白名单IP &f%whitelist%"
+  - "&c黑名单IP &f%blacklist%"
+  - ""
+  - "&c当前服务器延迟为&f%latency%"
+reason:
+  names: "您的 IP 上的账号过多"
+  joins: "您的 IP 的加入过多"
+  pings: "您的 IP 的 ping 次数过多"
+  strange: "可疑玩家"
+  vpn: "您正在使用 VPN/代理"
+  admin: "管理员将您列入黑名单"
+  check: "验证失败太多次!"
+help:
+  - ""
+  - "&c/uab &chelp &7- &f帮助"
+  - "&c/uab &ctoggle &factionbar/title/bossbar &7- &f修改标题"
+  - "&c/uab &cstats &7- &f统计数据"
+  - "&c/uab &cclear &fblacklist/whitelist &7- &f清理黑/白名单"
+  - "&c/uab &cwhitelist &fadd/remove &f<ip> &7- &f列入或删除白名单"
+  - "&c/uab &cblacklist &fadd/remove &f<ip>&7- &fM列入或删除黑名单"
+  - "&c/uab logs list <amount> &7- &f返回攻击的一些信息"
+  - "&c/uab logs last <id> &7- &f显示最近<amount>次攻击记录"
+  - "&c/uab cache status/clear &7- &f管理 UAB 缓存"
+  - "&c/uab &cfirewall &7- &f显示一些防火墙信息"
+  - "&c/uab &ccheck &f<id> &7- &f检查黑名单玩家"
+  - "&c/uab &creload &7- &f重新加载配置文件和消息"
+  - "&c/uab &cdump &7- &f提供给支持的有用信息!"
+attack-log:
+  - "&c攻击 ID&f %id%"
+  - "&c攻击时间&f %attack%"
+  - "&c黑名单IP &f%blacklist%"
+  - "&c拦截机器人 &f%bots%"
+  - "&c拦截 Ping 包 &f%pings%"
+  - "&c拦截数据包 &f%packets%"
+  - "&c平均 CPS &f%avg%"
+  - "&c攻击威力 &f%power%"
+  - "&c持续时间 &f%duration%"
+firewall:
+  - "&c防火墙状态: %status%"
+  - ""
+  - "&c等待中的IP: %queue%"
+  - "&cIP列入黑名单: %blacklist%"
+  - ""
+  - "&c这些是 UAB 防火墙统计信息,只有在您在配置中启用它时才会起作用!"
+  - "&c当所有IP都被阻止时,压测将被缓解!"
+antibotmode:
+  - "&fᛃ &4&LU&c&LA&4&LB &fᛃ"
+  - ""
+  - "&7反假人保护现已激活!"
+  - "&7它将保持活跃状态,直到&c$1%&7的 IP 被列入黑名单"
+  - "&7当前黑名单为 &c$2%"
+first_join:
+  - "&fᛃ &4&LU&c&LA&4&LB &fᛃ"
+  - ""
+  - "&7我们正在验证您的连接, 请稍后重新连接！"
+  - ""
+  - "&b汉化作者 &7» &f&n甜力怕"
+safe_mode:
+  - "&fᛃ &4&LU&c&LA&4&LB &fᛃᛃ"
+  - ""
+  - "&7我们无法及时核实您的情况!"
+  - "&7--------------------------------"
+  - ""
+  - "&c服务器遭遇假人攻击, 您已断开连接"
+  - "&c您必须要在 &f$1 &c秒内进入服务器"
+  - "&c如果你失败了, 你得重新来过"
+  - "&c剩余&f $2"
+  - "&7--------------------------------"
+  - "&b汉化作者 &7» &f&n甜力怕"
+account-online:
+  - "&fᛃ &4&LU&c&LA&4&LB &fᛃᛃ"
+  - ""
+  - "&7您在服务器上同时连接的账号过多!"
+  - ""
+  - "&b汉化作者 &7» &f&n甜力怕"
+ping:
+  - "&fᛃ &4&LU&c&LA&4&LB &fᛃᛃ"
+  - ""
+  - "&7精确 Ping 服务器 &c$1&7 次并加入"
+  - ""
+  - "&b汉化作者 &7» &f&n甜力怕"
+timer:
+  - "&fᛃ &4&LU&c&LA&4&LB &fᛃᛃ"
+  - ""
+  - "&7在&c$1&7秒内重新进入服务器"
+  - ""
+  - "&b汉化作者 &7» &f&n甜力怕"
+blacklisted:
+  - "&fᛃ &4&LU&c&LA&4&LB &fᛃᛃ"
+  - ""
+  - "&7您已被&c反假人系统&7列入黑名单"
+  - ""
+  - "&c原因 &7» &c$1"
+  - "&cID &7» &c$2"
+  - ""
+  - "&b汉化作者 &7» &f&n甜力怕"
+wait:
+  - "&fᛃ &4&LU&c&LA&4&LB &fᛃᛃ"
+  - ""
+  - "&7你的请求频率过高! 请等待 10 秒"
+  - ""
+  - "&b汉化作者 &7» &f&n甜力怕"
+fastjoin-queue:
+  - "&fᛃ &4&LU&c&LA&4&LB &fᛃᛃ"
+  - ""
+  - "&7您正在排队等待验证! 预计时间为3~5秒!"
+  - ""
+  - "&b汉化作者 &7» &f&n甜力怕"
+
+bossbar_idle_message: "&f等待压测"
+blacklist_info:
+  - "&c&l黑名单信息:"
+  - ""
+  - "&c原因 &7» &c$reason"
+  - "&cIP &7» &c$ip"
+  - "&c昵称 &7» &c$nick"
+  - "&cID &7» &c$id"
+  - ""
