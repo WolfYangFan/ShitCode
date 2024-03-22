@@ -1,0 +1,113 @@
+#  █████▒▄▄▄       ██▓     ██▓     ▄▄▄▄    ▄▄▄       ▄████▄   ██ ▄█▀     ██████ ▓█████  ██▀███   ██▒   █▓▓█████  ██▀███
+#▓██   ▒▒████▄    ▓██▒    ▓██▒    ▓█████▄ ▒████▄    ▒██▀ ▀█   ██▄█▒    ▒██    ▒ ▓█   ▀ ▓██ ▒ ██▒▓██░   █▒▓█   ▀ ▓██ ▒ ██▒
+#▒████ ░▒██  ▀█▄  ▒██░    ▒██░    ▒██▒ ▄██▒██  ▀█▄  ▒▓█    ▄ ▓███▄░    ░ ▓██▄   ▒███   ▓██ ░▄█ ▒ ▓██  █▒░▒███   ▓██ ░▄█ ▒
+#░▓█▒  ░░██▄▄▄▄██ ▒██░    ▒██░    ▒██░█▀  ░██▄▄▄▄██ ▒▓▓▄ ▄██▒▓██ █▄      ▒   ██▒▒▓█  ▄ ▒██▀▀█▄    ▒██ █░░▒▓█  ▄ ▒██▀▀█▄
+#░▒█░    ▓█   ▓██▒░██████▒░██████▒░▓█  ▀█▓ ▓█   ▓██▒▒ ▓███▀ ░▒██▒ █▄   ▒██████▒▒░▒████▒░██▓ ▒██▒   ▒▀█░  ░▒████▒░██▓ ▒██▒
+# ▒ ░    ▒▒   ▓▒█░░ ▒░▓  ░░ ▒░▓  ░░▒▓███▀▒ ▒▒   ▓▒█░░ ░▒ ▒  ░▒ ▒▒ ▓▒   ▒ ▒▓▒ ▒ ░░░ ▒░ ░░ ▒▓ ░▒▓░   ░ ▐░  ░░ ▒░ ░░ ▒▓ ░▒▓░
+# ░       ▒   ▒▒ ░░ ░ ▒  ░░ ░ ▒  ░▒░▒   ░   ▒   ▒▒ ░  ░  ▒   ░ ░▒ ▒░   ░ ░▒  ░ ░ ░ ░  ░  ░▒ ░ ▒░   ░ ░░   ░ ░  ░  ░▒ ░ ▒░
+# ░ ░     ░   ▒     ░ ░     ░ ░    ░    ░   ░   ▒   ░        ░ ░░ ░    ░  ░  ░     ░     ░░   ░      ░░     ░     ░░   ░
+#             ░  ░    ░  ░    ░  ░ ░            ░  ░░ ░      ░  ░            ░     ░  ░   ░           ░     ░  ░   ░
+#                                       ░           ░                                                ░
+# Made by CandiesJar | Github: github.com/sasi2006166 | Discord: https://discord.gg/fmUc6g3x | 汉化: 甜力怕(@xiaozhu2007@github)
+# BungeeCord 配置文件 for FallBack-Server 3.1.2
+
+MESSAGES:
+  prefix: "&7&lF&b&lS &8&l» "
+  correct_syntax: "%prefix% &正确语法: /fs <reload:add:remove:status:servers>"
+  reloaded: "%prefix% &7配置重载成功&7!"
+  only_player: "%prefix% &c只有玩家才能执行此命令"
+  already_in_hub: "%prefix%您已进入 Hub"
+  connecting_too_hub: "&7您已被转移到&b%server%"
+  disabled_command: "%prefix% &c对不起, 该命令已禁用"
+  no_permission: "%prefix% &7很抱歉, 您缺少权限 &c%permission%"
+  no_server: "%prefix% &c没有备用服务器"
+  empty_server: "%prefix%请指定一个服务器"
+  server_is_added: "%prefix%&b%server% &7已加入备用服务器列表"
+  server_removed: "%prefix% &b%server% &7已从配置文件中删除"
+  server_not_added: "%prefix% &b%server% &7不在配置文件中"
+  server_not_available: "%prefix% &b%server% &7不在 BungeeCord 配置中"
+  server_added: "%prefix% &b%server% &7已添加到配置中"
+  moved: "&7您已经被移动到 &b%server% 服务器"
+  empty_server: "%prefix% &7请 &c指定 &7一个服务器"
+  connection_failed: "%prefix% &7重连 &c&l失败&7! 转移到备用服务器"
+  exiting_reconnect: "%prefix% &7退出重连模式"
+
+  moved_to_lobby:
+    - ""
+    - "&7&m---------------------------------"
+    - ""
+    - "&7您已被转移到&b%server%"
+    - "&7原因：&b%reason%"
+    - ""
+    - "&7&m---------------------------------"
+
+  new_update:
+    - "&7&m---------------------------------"
+    - "&7您的更新会影响回退服务器。"
+    - ""
+    - "&7Aktuell version: &c%old_version% &7||Nyaste version: &b%new_version%"
+    - "&7&m---------------------------------"
+
+  fallback_command:
+    - "&8&m-----&8[&bFallback Server&8]&m-----"
+    - ""
+    - "&b/fs reload &7| 重载配置"
+    - "&b/fs add <server> &7| 在配置中添加回退服务器"
+    - "&b/fs status &7| 显示代理服务器的状态"
+    - ""
+    - "&7运行版本&b%version%"
+    - "&8&m---------------------------"
+
+  stats_command:
+    - "&8&m-----&8[&bSTATUS&8]&m-----"
+    - ""
+    - "&7运行版本: &b%version%"
+    - "&7代理端版本: &b%proxy_version%"
+    - "&7CPU 核心: &b%cores%"
+    - "&7使用的内存: &b%used_memory% MB"
+    - "&7玩家总数: &b%total_players%"
+    - ""
+    - "&7使用 &b/fs servers &7来获取大厅状态"
+    - ""
+    - "&8&m---------------------------"
+  servers_command:
+    online: "&a在线"
+    offline: "&c离线"
+    servers: "&7%server% &8| &b%status%"
+    header:
+      - "&8&m-----&8[&bSERVERS&8]&m-----"
+      - ""
+    footer:
+      - ""
+      - "&8&m------------------"
+
+TITLES: # Everything in seconds.
+  fallback:
+    enabled: true
+    delay: 2
+    fade_in: 1 # The time for showing the title
+    fade_out: 1 # Time for making title go away
+    stay: 3 # Time for making title stay in
+    fallback_title: "&f连接至 &a&l大厅"
+    fallback_sub_title: "&7服务器可能崩溃或维护"
+  # Reconnect title values are automatic.
+  # You can enable / disable it in config.yml
+  reconnect:
+    reconnect_title: "&c&l重连中&7%dots%"
+    reconnect_sub_title: "&7请等待!"
+    connecting_title: "&6&l连接中&7%dots%"
+    connecting_sub_title: "&7等待服务器响应."
+    connected:
+      delay: 2
+      fade_in: 1
+      fade_out: 1
+      stay: 2
+      title: "&a&l连接成功!"
+      sub_title: "&7您已经连接上了服务器 &b%server%"
+  lobby:
+    enabled: true
+    fade_in: 1
+    fade_out: 1
+    stay: 5
+    lobby_title: "&a&l连接到大厅"
+    lobby_sub_title: "&7欢迎回来！"
