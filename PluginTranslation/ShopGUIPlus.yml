@@ -1,5 +1,6 @@
 # 中文汉化 By 甜力怕(@xiaozhu2007@github)
-# 插件名称: ShopGUIPlus
+# 插件名称: ShopGUI+
+# 正版下载地址: https://www.spigotmc.org/resources/6515/
 PREFIX: '&aShop > &f'
 LANG:
   CONSOLE: 控制台
@@ -58,14 +59,11 @@ MSG:
       RESETMODIFIER:
         ITEM:
           USAGE: /shop resetmodifier item <player> <shop> <item> [buy|sell]
-          RESET: You reset &c%player%&f's %type% price modifier for the %item% item
-            in %shop% shop.
-          RESETBY: Your %type% price modifier for the %item% item in %shop% shop was
-            reset by &c%player%&f.
+          RESET: 您在 %shop% 中重置了 &c%player%&f 的 %item% 物品的 %type% 价格修改器.
+          RESETBY: 您在 %shop% 中的 %item% 商品的 %type% 价格修改器由 %c%player%&f 重置.
         SHOP:
           USAGE: /shop resetmodifier shop <player> <shop> [buy|sell]
-          RESET: You reset &c%player%&f's %type% price modifier for all items in %shop%
-            shop.
+          RESET: 您为 %shop% 商店中的所有物品重置 %c%player%&f 的 %type% 价格修改器。
           RESETBY: Your %type% price modifier for all items in %shop% shop was reset
             by &c%player%&f.
         GLOBAL:
@@ -73,12 +71,11 @@ MSG:
           RESET: You reset &c%player%&f's %type% price modifier.
           RESETBY: Your %type% price modifier was reset by &c%player%&f.
   MODIFIER:
-    INVALIDAMOUNT: Invalid modifier value specified. Valid values are for instance
-      0.50 which is 50%, 2.0 which is 200% etc.
-    INVALIDTYPE: Invalid modifier type specified. Valid values are buy, sell and both.
-    BUY: buy
-    SELL: sell
-    BOTH: buy & sell
+    INVALIDAMOUNT: 指定的修饰符值无效. eg. 值为 0.50 即 50%; 2.0 即 200%
+    INVALIDTYPE: 指定的修饰符类型无效. 有效值包括买入、卖出和两者。
+    BUY: 买
+    SELL: 卖
+    BOTH: 买 & 卖
   INVALIDPLAYER: 指定的玩家名称无效.
   INVALIDSHOP: 找不到 ID 为 &c%shop%&f 的店铺.
   INVALIDITEM: 在 &c%shop%&f 中找不到 ID 为 &c%item%&f 的项目.
@@ -114,23 +111,22 @@ MSG:
     BOUGHT: You bought &c%enchantment%&f enchantment for &c%price%&f.
     BOUGHTFREE: You received &c%enchantment%&f.
   PERMISSION:
-    PERMISSIONSDISABLED: Permissions are disabled, please contact server's owner.
-    ALREADYHAVE: You already have the &c%permission%&f permission.
-    CANNOTAFFORD: You need &c%price%&f to buy &c%permission%&f.
-    BOUGHT: You bought &c%permission%&f permission for &c%price%&f.
-    BOUGHTFREE: You received &c%permission%&f.
+    PERMISSIONSDISABLED: 权限被禁用，请与服务器管理员联系.
+    ALREADYHAVE: 您已经拥有了 &c%permission%&f 权限.
+    CANNOTAFFORD: 您需要 &c%price%&f 去购买权限 &c%permission%&f.
+    BOUGHT: 您用 &c%price%&f 购买了权限 &c%permission%&f.
+    BOUGHTFREE: 您接收了权限 &c%permission%&f.
   COMMAND:
     BOUGHT: You bought &c%command%&f for &c%price%&f.
     BOUGHTFREE: You received &c%command%&f.
     CANNOTAFFORD: You need &c%price%&f to buy &c%command%&f command.
   SELLHAND:
-    NOITEM: You have to hold an item in your hand in order to sell it.
-    INVALIDQUANTITY: Invalid quantity specified. Must be between 1 and %max%.
+    NOITEM: 您必须把一件物品拿在手里才能将其卖掉.
+    INVALIDQUANTITY: 未知数量, 必须为 1 到 %max% 中的一个值.
     CANNOTSELL: 您不能卖这个东西.
-    MULTIPLEQUANTITYONLY: You can't sell that quantity. Only multiples of %quantity%
-      are allowed for this item.
+    MULTIPLEQUANTITYONLY: 您不能卖这么多, 只有 %quantity% 的倍数允许用于此物品的售卖
   SELLHANDALL:
-    SOLD: You sold &a%quantity% x %item%&f for a total of &a%price%&f.
+    SOLD: 你卖出了 &a%quantity% x %item%&f, 获得了 &a%price%&f.
   SELLALL:
     NOITEMS: 您没有任何可以出售的商品.
     SOLD: 您卖出了 &a%quantity% 物品&f, 总价格为 &a%price%&f.
