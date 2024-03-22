@@ -1,6 +1,6 @@
 # 中文汉化 By 甜力怕(@xiaozhu2007@github)
 # 插件名称: ShopGUI+
-# 正版下载地址: https://www.spigotmc.org/resources/6515/
+# 下载地址: https://www.spigotmc.org/resources/6515/
 PREFIX: '&aShop > &f'
 LANG:
   CONSOLE: 控制台
@@ -9,7 +9,7 @@ MSG:
   ERROR: 出现错误，请与服务器管理员联系.
   INGAMEONLY: 此命令只能在游戏中使用.
   NOACCESS: 您无权执行此操作.
-  NOTLOADED: 商店还没有加载完全, 请等待!
+  NOTLOADED: 商店还没有完全加载, 请等待!
   RELOADED: 配置已重载
   USAGE:
     SUBCOMMAND: '错误的用法. 正确用法: %usage%'
@@ -46,9 +46,9 @@ MSG:
             Item modifiers:
             %item%
           ENTRY:
-            ITEM: 'Item: &c%item%&f, shop: &c%shop%&f, buy: &c%buy%&f, sell: &c%sell%&f'
-            SHOP: 'Shop: &c%shop%&f, buy: &c%buy%&f, sell: &c%sell%&f'
-            GLOBAL: 'Buy: &c%buy%&f, sell: &c%sell%&f'
+            ITEM: '物品: &c%item%&f, 商店: &c%shop%&f, 购入: &c%buy%&f, 卖出: &c%sell%&f'
+            SHOP: '商店: &c%shop%&f, 购入: &c%buy%&f, 卖出: &c%sell%&f'
+            GLOBAL: '购入: &c%buy%&f, 卖出: &c%sell%&f'
           VIEWPERMISSIONMODIFIERS: |-
             &c%player%&f's permission modifiers:
             Global modifiers:
@@ -88,28 +88,28 @@ MSG:
   GAMEMODEBANNED: 您在 %gamemode% 游戏模式下无法访问商店.
   GAMEMODEBANNEDTARGET: %player% 在 %gamemode% 游戏模式下无法访问商店.
   ITEM:
-    FULLINVENTORY: You don't have enough free space in your inventory.
-    CANNOTAFFORD: You need &c%price%&f to buy &c%amount% x %item%&f.
-    CANNOTBUY: You can't buy this item.
-    CANNOTSELL: You can't sell this item.
-    BOUGHT: You bought &c%amount% x %item%&f for &c%price%&f.
-    BOUGHTFREE: You received &c%amount% x %item%&f.
-    NOTENOUGH: You don't have &c%amount% x %item%&f to sell.
-    SOLD: You sold &a%amount% x %item%&f for &a%price%&f.
+    FULLINVENTORY: 您的背包满了.
+    CANNOTAFFORD: 您需要 &c%price%&f 去购买 &c%amount% x %item%&f.
+    CANNOTBUY: 您无法购买此物品.
+    CANNOTSELL: 您无法卖出此物品.
+    BOUGHT: 您购买了 &c%amount% x %item%&f, 价格为 &c%price%&f.
+    BOUGHTFREE: 您接收了 &c%amount% x %item%&f.
+    NOTENOUGH: 您没有 &c%amount% x %item%&f 以供卖出.
+    SOLD: 您卖出了 &a%amount% x %item%&f, 价格为 &a%price%&f.
     SOLDFREE: You gave away &a%amount% x %item%&f.
-    SOLDALL: You sold all &a%item%&f (&a%amount% x %item%&f) for &a%price%&f.
-    SOLDALLFREE: You gave away all &a%item%&f (&a%amount% x %item%&f).
-    NOACCESS: You don't have access to this item.
+    SOLDALL: 您卖出了 &a%item%&f (&a%amount% x %item%&f) 价格为 &a%price%&f.
+    SOLDALLFREE: 您免费卖出了 &a%item%&f (&a%amount% x %item%&f).
+    NOACCESS: 您无权使用此物品.
   ENCHANT:
     CANNOTAPPLY: Enchantment &c%enchantment%&f cannot be applied to the item you're
       holding.
-    ALREADYAPPLIED: This item already has &c%enchantment%&f applied.
+    ALREADYAPPLIED: 这个物品已经拥有了 &c%enchantment%&f 附魔.
     LEVELDIFF: You need an item with at least &c%enchantment% %level%&f applied.
     CANNOTAFFORD: You need &c%price%&f to buy &c%enchantment%&f.
     MAX: This item already has the maximum amount of enchantments (%amount%).
-    TOOMANY: You can't enchant more than %amount% items at once.
-    BOUGHT: You bought &c%enchantment%&f enchantment for &c%price%&f.
-    BOUGHTFREE: You received &c%enchantment%&f.
+    TOOMANY: 你不能同时附魔超过 %amount% 的物品.
+    BOUGHT: 您购买了 &c%enchantment%&f 附魔, 价格为 &c%price%&f.
+    BOUGHTFREE: 您接收到了附魔 &c%enchantment%&f.
   PERMISSION:
     PERMISSIONSDISABLED: 权限被禁用，请与服务器管理员联系.
     ALREADYHAVE: 您已经拥有了 &c%permission%&f 权限.
@@ -117,9 +117,9 @@ MSG:
     BOUGHT: 您用 &c%price%&f 购买了权限 &c%permission%&f.
     BOUGHTFREE: 您接收了权限 &c%permission%&f.
   COMMAND:
-    BOUGHT: You bought &c%command%&f for &c%price%&f.
-    BOUGHTFREE: You received &c%command%&f.
-    CANNOTAFFORD: You need &c%price%&f to buy &c%command%&f command.
+    BOUGHT: 您购买了命令 &c%command%&f, 价格为 &c%price%&f.
+    BOUGHTFREE: 您接收了命令 &c%command%&f.
+    CANNOTAFFORD: 您需要 &c%price%&f 去购买 &c%command%&f 命令.
   SELLHAND:
     NOITEM: 您必须把一件物品拿在手里才能将其卖掉.
     INVALIDQUANTITY: 未知数量, 必须为 1 到 %max% 中的一个值.
