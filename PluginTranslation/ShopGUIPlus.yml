@@ -1,15 +1,17 @@
+# 中文汉化 By 甜力怕(@xiaozhu2007@github)
+# 插件名称: ShopGUIPlus
 PREFIX: '&aShop > &f'
 LANG:
-  CONSOLE: Console
+  CONSOLE: 控制台
 MSG:
-  AND: ' and '
-  ERROR: Error occurred, please contact the server owner.
-  INGAMEONLY: This command can be used only in the game.
-  NOACCESS: You don't have access to do this.
-  NOTLOADED: Shops haven't been loaded yet, please try again later.
-  RELOADED: Configuration reloaded!
+  AND: ' 和 '
+  ERROR: 出现错误，请与服务器管理员联系.
+  INGAMEONLY: 此命令只能在游戏中使用.
+  NOACCESS: 您无权执行此操作.
+  NOTLOADED: 商店还没有加载完全, 请等待!
+  RELOADED: 配置已重载
   USAGE:
-    SUBCOMMAND: 'Invalid command usage. Correct usage: %usage%'
+    SUBCOMMAND: '错误的用法. 正确用法: %usage%'
   CMD:
     SHOP:
       ADDMODIFIER:
@@ -30,8 +32,8 @@ MSG:
           ADDED: You set &c%player%&f's %type% price modifier to &c%modifier%&f.
           ADDEDBY: Your %type% price modifier was set to &c%modifier%&f by &c%player%&f.
       CHECK:
-        ITEM: This item's type is &c%material%&f with damage &c%damage%&f.
-        NOITEM: You have to hold an item in your hand in order to check its type.
+        ITEM: 该物品的类型为 &c%material%&f 损坏为 &c%damage%&f.
+        NOITEM: 你必须把一件物品拿在手里才能检查它的类型.
       CHECKMODIFIERS:
         VIEW:
           VIEW: |-
@@ -77,17 +79,17 @@ MSG:
     BUY: buy
     SELL: sell
     BOTH: buy & sell
-  INVALIDPLAYER: Invalid player name specified.
-  INVALIDSHOP: Shop with ID &c%shop%&f not found.
-  INVALIDITEM: Item with ID &c%item%&f not found in &c%shop%&f.
-  NOACCESSTOSHOP: You don't have access to &c%shop%&f shop.
-  NODIRECTACCESSTOSHOP: You can't access the &c%shop%&f shop.
-  MAINMENUDISABLED: You can't use this command. Please use /shop <id> instead.
-  WORLDBLACKLISTED: You can't access %shop% in this world.
-  WORLDBANNED: You can't access the shop in this world.
-  WORLDBANNEDTARGET: '%player% can''t access the shop in that world.'
-  GAMEMODEBANNED: You can't access the shop when in gamemode %gamemode%.
-  GAMEMODEBANNEDTARGET: '%player% can''t access the shop when in gamemode %gamemode%.'
+  INVALIDPLAYER: 指定的玩家名称无效.
+  INVALIDSHOP: 找不到 ID 为 &c%shop%&f 的店铺.
+  INVALIDITEM: 在 &c%shop%&f 中找不到 ID 为 &c%item%&f 的项目.
+  NOACCESSTOSHOP: 您没有访问 &c%shop%&f 商店的权限.
+  NODIRECTACCESSTOSHOP: 您无法访问 %c%shop%&f 商店.
+  MAINMENUDISABLED: 您不能使用此命令, 请改用 /shop <id> 以替代.
+  WORLDBLACKLISTED: 您无法在当前世界访问 %shop%.
+  WORLDBANNED: 您无法在当前世界访问商店.
+  WORLDBANNEDTARGET: %player% 无法在世界访问商店.
+  GAMEMODEBANNED: 您在 %gamemode% 游戏模式下无法访问商店.
+  GAMEMODEBANNEDTARGET: %player% 在 %gamemode% 游戏模式下无法访问商店.
   ITEM:
     FULLINVENTORY: You don't have enough free space in your inventory.
     CANNOTAFFORD: You need &c%price%&f to buy &c%amount% x %item%&f.
@@ -124,24 +126,24 @@ MSG:
   SELLHAND:
     NOITEM: You have to hold an item in your hand in order to sell it.
     INVALIDQUANTITY: Invalid quantity specified. Must be between 1 and %max%.
-    CANNOTSELL: You can't sell this item.
+    CANNOTSELL: 您不能卖这个东西.
     MULTIPLEQUANTITYONLY: You can't sell that quantity. Only multiples of %quantity%
       are allowed for this item.
   SELLHANDALL:
     SOLD: You sold &a%quantity% x %item%&f for a total of &a%price%&f.
   SELLALL:
-    NOITEMS: You don't have any items you can sell.
-    SOLD: You sold &a%quantity% items&f for a total of &a%price%&f.
-    INVALIDSHOP: Invalid shop specified.
+    NOITEMS: 您没有任何可以出售的商品.
+    SOLD: 您卖出了 &a%quantity% 物品&f, 总价格为 &a%price%&f.
+    INVALIDSHOP: 指定的店铺无效.
   NUMBERFORMAT:
     SHORTSCALE:
-      THOUSAND: ' Thousand'
-      MILLION: ' Million'
-      BILLION: ' Billion'
-      TRILLION: ' Trillion'
-      QUADRILLION: ' Quadrillion'
-      QUINTILLION: ' Quintillion'
-      SEXTILLION: ' Sextillion'
+      THOUSAND: ' k'
+      MILLION: ' 百万'
+      BILLION: ' B' # 十亿
+      TRILLION: ' T' # 万亿
+      QUADRILLION: ' Quadrillion' # 10^15
+      QUINTILLION: ' Quintillion' # 10^18
+      SEXTILLION: ' Sextillion' # 10^21
       SEPTILLION: ' Septillion'
       OCTILLION: ' Octillion'
       NONILLION: ' Nonillion'
@@ -149,14 +151,14 @@ MSG:
 DIALOG:
   AMOUNTSELECTION:
     BUY:
-      NAME: '&2Buying %item%'
+      NAME: '&2购买 %item%'
     SELL:
-      NAME: '&cSelling %item%'
+      NAME: '&c卖出 %item%'
     BULKBUY:
-      NAME: '&cBuying stacks of %item%'
+      NAME: '&c正在购买一组 %item%'
     BULKSELL:
-      NAME: '&cSelling stacks of %item%'
+      NAME: '&c正在卖出一组 %item%'
 SHOP:
   PERMISSION:
-    ALREADYOWNED: '&4(Already owned)'
-    NOTOWNED: '&a(Not owned)'
+    ALREADYOWNED: '&4(已拥有)'
+    NOTOWNED: '&a(未拥有)'
