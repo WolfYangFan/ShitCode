@@ -1,0 +1,176 @@
+# 中文汉化 By 甜力怕(@xiaozhu2007@github) & NexAuth
+#
+# Here you can create your own custom placeholders to use it in language config.
+# Key = Placeholder, Value = Replacer.
+Placeholders:
+  '%green%': '#aefd5e'
+  '%gray%': '#d4d9d8'
+  '%red%': '#fd5e5e'
+Command:
+  Login:
+    Usage: <密码>
+    Desc: 登录服务器.
+  Register:
+    Usage: <密码>
+    Desc: 在服务器上注册.
+  Changepassword:
+    Usage: <旧密码> <新密码>
+    Desc: 更改当前密码
+  Secret:
+    Usage: '[help]'
+    Desc: 管理账号的密保问题.
+    Add:
+      Usage: ''
+      Desc: 为账号添加密保问题.
+    Remove:
+      Usage: ''
+      Desc: 删除账号中的密保问题.
+  Admin:
+    Changepassword:
+      Usage: <player> <password>
+      Desc: 更改玩家当前密码.
+      Done: '更改 #aefd5e%player_name%#d4d9d8的密码.'
+    Unregister:
+      Usage: <user>
+      Desc: 取消指定玩家的注册信息.
+      Done: '&a%player%&7 未注册.'
+      Kick: '&e您的账号已被取消注册.'
+    ResetSecret:
+      Usage: <player>
+      Desc: 重置玩家的密保问题.
+      Done: '#d4d9d8重置 #aefd5e%player_name% #d4d9d8的密保问题.'
+    SetLoginLocation:
+      Usage: ''
+      Desc: 将登录位置设置为您当前位置.
+      Done: 登录位置设置!
+Join:
+  Error:
+    Name:
+      Short: '#fd5e5e您的名字太短！必须至少包含 #fdba5e%amount%#fd5e5e 个字符!'
+      Long: '#fd5e5e您的名字太长！不得超过 #fdba5e%amount%#fd5e5e 个字符!'
+      InvalidChars: '#fd5e5e您的名字包含不允许的字符！有效字符范围: #fdba5e%pattern%'
+      InvalidCase: '#fd5e5e您的名字用错了大小写！必须是: #fdba5e%name%'
+    BadCountry: '#fd5e5eClockfun 不在您所在的国家提供服务!'
+    AlreadyLogged: '#fd5e5e使用此名称的玩家已登录.'
+Login:
+  Notify:
+    LogIn: '<! type:"action_bar" !>#fd5e5e您尚未登录.请使用 #fdba5e/login <password> #fd5e5e进行登录.'
+    Register: '<! type:"action_bar" !>#fd5e5e您尚未注册.注册指令 #fdba5e/register <password>'
+  Error:
+    TooManyAttempts: '#fd5e5e您已达到登录次数上限.'
+    Timeout: '#fd5e5e登录超时!'
+    WrongPassword:
+    - <! type:"titles:20:-1:20" sound:"ENTITY_VILLAGER_NO" !>
+    - '#fd5e5e&l密码错误!'
+    - '#d4d9d8请再试一次. #6c6c62(可尝试:%amount%)'
+    WrongConfirm:
+    - <! type:"titles:20:-1:20" sound:"ENTITY_VILLAGER_NO" !>
+    - '#fd5e5e&l密码不匹配'
+    - '#d4d9d8密码确认失败. 请输入 #fd5e5e新#d4d9d8 密码.'
+  Prompt:
+    Password:
+    - <! type:"titles:20:-1:20" !>
+    - '#fdf35e&l请登录'
+    - '#d4d9d8在 #fdf35e聊天 #d4d9d8中输入密码.'
+    Register:
+    - <! type:"titles:20:-1:20" !>
+    - '#fd5e5e&l请进行注册'
+    - '#d4d9d8在 #fd5e5e聊天 #d4d9d8中设置你的密码.'
+    ConfirmPassword:
+    - <! type:"titles:20:-1:20" sound:"BLOCK_LAVA_POP" !>
+    - '#fdba5e&l确认密码'
+    - '#d4d9d8在 #fdba5e聊天#d4d9d8 中再次输入您设置的密码.'
+  Register:
+    Success:
+    - <! type:"titles:20:60:20" sound:"ENTITY_PLAYER_LEVELUP" !>
+    - '#aefd5e&l注册成功!'
+    - '#d4d9d8您已注册.您现在可以进行游戏.请牢记您的密码'
+  Success:
+  - <! type:"titles:20:60:20" sound:"BLOCK_IRON_DOOR_OPEN" !>
+  - '#aefd5e&l登录成功!'
+  - '#d4d9d8登录成功.您现在可以进行游戏.'
+Register:
+  RemindPassword:
+  - <! prefix:"false" !>
+  - '&7'
+  - '#aefd5e&l注册成功!'
+  - '#d4d9d8您的密码是: <? show_text:"#fdba5e%password%" ?>#aefd5e[Spoiler]</>'
+  - '&7'
+  - '#fd5e5e&l注意: #d4d9d8切勿向任何人透露密码! 服务器管理员 #fd5e5e绝不会#d4d9d8 要求你透露向其密码.'
+  - '&7'
+  Error:
+    Password:
+      Short:
+      - <! type:"titles:20:-1:20" sound:"ENTITY_VILLAGER_NO" !>
+      - '#fd5e5e&l密码过短!'
+      - '#d4d9d8密码必须至少包含 #fd5e5e%amount%#d4d9d8 个字符!'
+      Long:
+      - <! type:"titles:20:-1:20" sound:"ENTITY_VILLAGER_NO" !>
+      - '#fd5e5e&l密码过长!'
+      - '#d4d9d8密码不能超过 #fd5e5e%amount%#d4d9d8 个字符!'
+      InvalidChars:
+      - <! type:"titles:20:-1:20" sound:"ENTITY_VILLAGER_NO" !>
+      - '#fd5e5e&l密码不安全!'
+      - '#d4d9d8您的密码包含未知的字符!'
+      NotEnoughLowerChars:
+      - <! type:"titles:20:-1:20" sound:"ENTITY_VILLAGER_NO" !>
+      - '#fd5e5e&l密码不安全!'
+      - '#d4d9d8密码必须至少包含 #fd5e5e%amount%#d4d9d8 个小写字符!'
+      NotEnoughUpperChars:
+      - <! type:"titles:20:-1:20" sound:"ENTITY_VILLAGER_NO" !>
+      - '#fd5e5e&l密码不安全!'
+      - '#d4d9d8密码必须至少包含 #fd5e5e%amount%#d4d9d8 个大写字符!'
+      NotEnoughDigits:
+      - <! type:"titles:20:-1:20" sound:"ENTITY_VILLAGER_NO" !>
+      - '#fd5e5e&l密码不安全!'
+      - '#d4d9d8密码必须至少包含 #fd5e5e%amount%#d4d9d8 个数字!'
+      NotEnoughUniques:
+      - <! type:"titles:20:-1:20" sound:"ENTITY_VILLAGER_NO" !>
+      - '#fd5e5e&l密码不安全!'
+      - '#d4d9d8密码必须至少包含 #fd5e5e%amount%#d4d9d8 个不同的字符!'
+    IPLimit:
+    - <! type:"titles:20:-1:20" sound:"ENTITY_VILLAGER_NO" !>
+    - '#fd5e5e&l注册失败!'
+    - '#d4d9d8您的 IP 已经无法再创建新的账户了！.'
+Changepassword:
+  Error:
+    WrongOld: 旧密码错误!
+  Notify:
+    Changed: 您修改了密码!
+Secret:
+  Error:
+    NotSet: '#fd5e5e你没有设置密保问题!'
+    AlreadySet: '#fd5e5e您已经有了一个密保问题！您需要先删除它.'
+  Add:
+    Notify:
+    - <! prefix:"false" !>
+    - '&7'
+    - '#fdf35e&l>#d4d9d8 添加 #fdf35e密保问题#d4d9d8 进一步保护您的账号!'
+    - '#fdf35e&l>#d4d9d8 输入 #fdf35e/secret add#d4d9d8 添加密保问题.'
+    - '&7'
+    Question:
+    - <! type:"titles:20:-1:20" sound:"BLOCK_LAVA_POP" !>
+    - '#fdf35e&l密保问题'
+    - '#d4d9d8在 #fdf35e聊天#d4d9d8 中输入想要创建的密保问题.'
+    Answer:
+    - <! type:"titles:20:-1:20" sound:"BLOCK_LAVA_POP" !>
+    - '#fdf35e&l%question%'
+    - '#d4d9d8在 #fdf35e聊天#d4d9d8 中输入密保答案.'
+    Done:
+    - <! type:"titles:20:60:20" sound:"BLOCK_ENCHANTMENT_TABLE_USE" !>
+    - '#aefd5e&l密保已添加!'
+    - '#d4d9d8您为自己的账号创建了密保问题.'
+  Answer:
+    Prompt:
+    - <! type:"titles:20:-1:20" sound:"BLOCK_LAVA_POP" !>
+    - '#fdba5e&l%question%'
+    - '#d4d9d8在 #fdba5e聊天#d4d9d8 输入密保答案.'
+    Wrong:
+    - <! type:"titles:20:-1:20" sound:"ENTITY_VILLAGER_NO" !>
+    - '#fd5e5e&l%question%'
+    - '#d4d9d8密保答案错误! #fd5e5e再试一次#d4d9d8.'
+  Remove:
+    Done:
+    - <! type:"titles:20:60:20" sound:"BLOCK_GRINDSTONE_USE" !>
+    - '#aefd5e&l删除密保!'
+    - '#d4d9d8您删除了账号中的密保问题.'
