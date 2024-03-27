@@ -16,3 +16,7 @@
 ### 提问的智慧
 
 [Github 简中](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md) | [USTC 简中](https://lug.ustc.edu.cn/wiki/doc/smart-questions/)
+
+### 请选择你的截图工具
+
+[知乎: Snipaste & Pixpin](https://zhuanlan.zhihu.com/p/670754383) | [开源: eSearch](https://github.com/xushengfeng/eSearch) | [系统: Windows 截图](https://support.microsoft.com/zh-cn/windows/%E6%89%93%E5%BC%80%E6%88%AA%E5%9B%BE%E5%B7%A5%E5%85%B7%E5%B9%B6%E8%8E%B7%E5%8F%96%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-a35ac9ff-4a58-24c9-3253-f12bac9f9d44)
