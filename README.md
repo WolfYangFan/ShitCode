@@ -28,3 +28,8 @@
 - 为什么我家电脑开不了机 (无详细说明)
 - 我玩不了游戏是什么原因 (无后续)
 - 我在警局看 Telegram 消息为什么一群警察盯着我 (???)
+- java环境和linux环境有什么区别
+- 如图:
+![image](https://github.com/xiaozhu2007/ShitCode/assets/63779340/d5ea686d-c1c3-4760-9737-f74ce0fd92b4)
+
+  
