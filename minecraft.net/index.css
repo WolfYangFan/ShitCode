@@ -1,0 +1,33 @@
+.MCExp_AprilFools_PoisonPotato {
+    position: absolute;
+    width: 128px;
+    height: 128px;
+    background-image: url('https://www.minecraft.net/content/dam/minecraftnet/franchise/experiments/aprilFools/2024/poison-potato.png');
+    z-index: 2;
+    background-color: transparent;
+    border: 0;
+    background-size: contain;
+    visibility: visible;
+    opacity: 1;
+}
+
+.MCExp_AprilFools_HealthBar_Heart {
+    background: url('https://www.minecraft.net/content/dam/minecraftnet/franchise/experiments/aprilFools/2024/heart-states.png?v=1') no-repeat left top;
+    width: 36px;
+    height: 36px;
+}
+
+#taterAnimationToggle_0 .MC_Animation_action__aprilFoolsAnimationToggle[data-paused=false]::after {
+    aspect-ratio: 52/48;
+    background: url('https://www.minecraft.net/content/dam/minecraftnet/franchise/experiments/aprilFools/2024/disable-potatoes.png') no-repeat;
+}
+
+#taterAnimationToggle_0 .MC_Animation_action__aprilFoolsAnimationToggle::after {
+    content: ' ';
+    display: block;
+    width: 26px;
+    height: 24px;
+    background-size: contain!important;
+    position: relative;
+    left: -2px;
+}
