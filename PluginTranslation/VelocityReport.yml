@@ -1,4 +1,4 @@
-config_version: 5
+config_version: 4
 general:
   raw_prefix: '[玩家举报]'
   prefix: <gradient:dark_red:red>举报</gradient> <gold>|</gold>
