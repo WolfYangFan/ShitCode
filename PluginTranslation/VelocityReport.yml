@@ -1,0 +1,86 @@
+config_version: 5
+general:
+  raw_prefix: '[玩家举报]'
+  prefix: <gradient:dark_red:red>举报</gradient> <gold>|</gold>
+  console_prefix: <gray>[<gradient:dark_red:red>VelocityReport</gradient>]</gray>
+  successful_prefix: <dark_gray>[</dark_gray><dark_green><bold>✔</bold><dark_gray>]</dark_gray>
+  warn_prefix: <dark_gray>[</dark_gray><gold><bold>!</bold><dark_gray>]</dark_gray>
+  error_prefix: <dark_gray>[</dark_gray><dark_red><bold>✘</bold><dark_gray>]</dark_gray>
+  only_players: $error_prefix <gradient:dark_red:red>只有玩家才能使用这个命令.
+  valid_parameters: $error_prefix <gradient:dark_red:red>请使用正确的命令. <dark_gray>($argument)
+  unknown_message: $error_prefix <gradient:dark_red:red>未知消息
+command:
+  no_permission: $error_prefix <gradient:dark_red:red>你无权使用此命令! <dark_gray>($permission)
+  report:
+    usage: '$warn_prefix <gradient:dark_red:red>用法: <gold>/report <yellow><玩家> [category]
+      [reason]'
+    use: $successful_prefix <gradient:dark_green:green>$player 已被成功举报, 原因: <aqua>$reason<aqua>
+    no_target: $error_prefix <gradient:dark_red:red>玩家未找到(或未在线)!
+    prevent_self: $error_prefix <gradient:dark_red:red>你不能举报你自己!
+    cooldown: $error_prefix <gradient:dark_red:red>你在 <gold>$time</gold> 秒内不能再次举报!
+    no_reason_custom: '$warn_prefix <gradient:dark_red:red>用法: <gold>/report <yellow><玩家>
+      [原因]'
+    invalid:
+      category: $error_prefix <gradient:dark_red:red><gold>$category</gold> 不是合法的分类!
+      reason: $error_prefix <gradient:dark_red:red><gold>$reason</gold> 不是合法的原因!
+    book:
+      header:
+      - <dark_red>❐ <gradient:dark_red:red>举报原因
+      - ''
+      - ''
+      category: <click:run_command:'/report $player $category'><hover:show_text:'<yellow>点击举报!'><gold>● <dark_red>$name</hover></click>
+      reason: "<click:run_command:'/report $player $category $reason'><hover:show_text:'<dark_green>Description:\
+        \ <gradient:gray:white>$description \n\n<yellow>点击举报!'><gold>●\
+        \ <red>$name</hover></click>"
+      footer:
+      - ''
+  reportadmin:
+    usage: '$warn_prefix <gradient:dark_red:red>用法: <gold>/reportadmin <yellow><args>'
+    reload:
+      use: $successful_prefix <green>插件重载成功!
+    reports:
+      receive: $warn_prefix <gradient:gold:yellow>正在从数据库抓取信息...
+      book:
+        header:
+        - '<dark_red>❐ <gradient:dark_red:red>举报消息:'
+        - ''
+        format: |-
+          <click:run_command:'/reportadmin accept $id'><hover:show_text:'<red>举报者: <aqua>$reporter</aqua>
+          被举报者: <aqua>$reported</aqua>
+          服务器: <aqua>$server</aqua>
+
+          原因: <aqua>$reason</aqua>
+
+           <yellow>点击接手该消息!'><gold>● <red>$reported</hover></click>
+    accept:
+      usage: '$warn_prefix <gradient:dark_red:red>用法: <gold>/reportadmin accept <yellow><report
+        id>'
+      use: $successful_prefix <gradient:dark_green:green>举报接手成功 ($id)!
+      already_accepted: $warn_prefix <gradient:red:gold>举报不存在或接手过了 ($id)!
+    done:
+      usage: '$warn_prefix <gradient:dark_red:red>用法: <gold>/reportadmin done <yellow><report
+        id>'
+      use: $successful_prefix <gradient:dark_green:green>举报已解决 ($id)!
+      already_done: $warn_prefix <gradient:red:gold>举报不存在或已解决 ($id)!
+    myreports:
+      receive: $warn_prefix <gradient:gold:yellow>正在从数据库抓取你的举报...
+      use: $successful_prefix <gradient:dark_green:green>举报成功 ($id)!
+      book:
+        header:
+        - '<dark_red>❐ <gradient:dark_red:red>你的举报:'
+        - ''
+        format: |-
+          <click:run_command:'/reportadmin done $id'><hover:show_text:'<red>举报者: <aqua>$reporter</aqua>
+          被举报人: <aqua>$reported</aqua>
+          服务器: <aqua>$server</aqua>
+
+          原因: <aqua>$reason</aqua>
+
+           <yellow>Click to mark as done!'><gold>● <red>$reported</hover></click>
+report:
+  actionbar: <dark_red>⚠ <gradient:gold:yellow>您收到了 <aqua>$reports</aqua> 条举报!
+  message: |-
+    <click:run_command:'/reportadmin reports'><hover:show_text:'<red>服务器: <aqua>$server</aqua>
+    原因: <aqua>$reason</aqua>
+
+    <yellow>点击查看所有举报!'><gold>● <red>$reporter</red> reported <red>$reported</red></hover></click>
