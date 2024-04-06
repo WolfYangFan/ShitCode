@@ -76,7 +76,7 @@ command:
 
           原因: <aqua>$reason</aqua>
 
-           <yellow>Click to mark as done!'><gold>● <red>$reported</hover></click>
+           <yellow>点击以标记为完成!'><gold>● <red>$reported</hover></click>
 report:
   actionbar: <dark_red>⚠ <gradient:gold:yellow>您收到了 <aqua>$reports</aqua> 条举报!
   message: |-
