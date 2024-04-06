@@ -43,5 +43,5 @@
 
     window.addEventListener('load', trigger('pageview'))
 })();
-// Test Env. Usage: 
+// Test environment usage: 
 // <script defer data-api="https://hc-ping.com/3855e1be-d3da-4af3-8cdf-ce95e8178a38" data-domain="my.domain.com" src="https://xiaozhu2007.github.io/ShitCode/LAnalytics/index.js"></script>
