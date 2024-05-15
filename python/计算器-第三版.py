@@ -62,3 +62,24 @@ def pop_operator(numbers, operators):
         else:
             raise ZeroDivisionError("除数不能为0")  # 抛出除数为0的错误
     elif operator == '^':
+        numbers.append(left ** right)
+
+def calculator():
+    """
+    计算器函数。
+    用户可以输入一个包含数字和运算符的数学表达式。
+    程序会计算并返回结果。
+    支持的运算符包括：+、-、*、/、^。
+    """
+    # 用户输入表达式
+    expression = input("请输入数学表达式（例如：3 + 4 * 2 / (1 - 5)^2）：")
+
+    # 计算表达式
+    result = calculate(expression)
+    if result is not None:
+        print(f"结果：{result}")
+    else:
+        print("无效的数学表达式！")
+
+if __name__ == "__main__":
+    calculator()  # 调用计算器函数
