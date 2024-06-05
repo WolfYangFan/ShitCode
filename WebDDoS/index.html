@@ -40,7 +40,8 @@
         };
         setInterval(function () {
           axios
-            .post("https://api.globalping.io/v1/measurements", data, {
+            .post("https://api.globalping.io/v1/measurements", {
+              data: data,
               headers: {
                 authority: "api.globalping.io",
                 accept: "application/json",
