@@ -24,7 +24,7 @@ class Logger {
     }
     const timestamp = new Date().toISOString();
     const stack = error ? error.stack : '';
-    const formattedMessage = `[${timestamp}] [${level}] ${message} ${stack}`;
+    var formattedMessage = `[${timestamp}] [${level}] ${message} ${stack}`;
     // 格式化错误堆栈
     if (error) {
       formattedMessage += `\n${this.formatStack(error.stack)}`;
