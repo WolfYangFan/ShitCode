@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -19,8 +19,8 @@
           accept: "application/json",
           "accept-language": "zh-TW,zh;q=0.9,en;q=0.8",
           "cache-control": "no-cache",
-          "content-type": "application/json"
-        }
+          "content-type": "application/json",
+        },
       });
       function onClick() {
         var t = document.getElementById("targrt").value;
@@ -30,41 +30,43 @@
           measurementOptions: {
             protocol: "HTTPS",
             request: {
-              method: "GET"
-            }
+              method: "GET",
+            },
           },
           locations: [],
           inProgressUpdates: false,
-          limit: 500
+          limit: 500,
         };
-        axios
-          .post("https://api.globalping.io/v1/measurements", data, {
-            headers: {
-              authority: "api.globalping.io",
-              accept: "application/json",
-              "accept-language": "zh-TW,zh;q=0.9,en;q=0.8",
-              "cache-control": "no-cache",
-              "content-type": "application/json"
-            }
-          })
-          .catch(function (error) {
-            if (error.response) {
-              // The request was made and the server responded with a status code
-              // that falls out of the range of 2xx
-              console.log(error.response.data);
-              console.log(error.response.status);
-              console.log(error.response.headers);
-            } else if (error.request) {
-              // The request was made but no response was received
-              // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-              // http.ClientRequest in node.js
-              console.log(error.request);
-            } else {
-              // Something happened in setting up the request that triggered an Error
-              console.log("Error ", error.message);
-            }
-            console.log(error.config);
-          }); // GlobalPing
+        setInterval(function () {
+          axios
+            .post("https://api.globalping.io/v1/measurements", data, {
+              headers: {
+                authority: "api.globalping.io",
+                accept: "application/json",
+                "accept-language": "zh-TW,zh;q=0.9,en;q=0.8",
+                "cache-control": "no-cache",
+                "content-type": "application/json",
+              },
+            })
+            .catch(function (error) {
+              if (error.response) {
+                // The request was made and the server responded with a status code
+                // that falls out of the range of 2xx
+                console.log(error.response.data);
+                console.log(error.response.status);
+                console.log(error.response.headers);
+              } else if (error.request) {
+                // The request was made but no response was received
+                // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+                // http.ClientRequest in node.js
+                console.log(error.request);
+              } else {
+                // Something happened in setting up the request that triggered an Error
+                console.log("Error ", error.message);
+              }
+              console.log(error.config);
+            }); // GlobalPing
+        }, 3000);
       }
     </script>
   </body>
