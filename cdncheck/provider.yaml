@@ -99,3 +99,5 @@ common:
       - edgesuite.net
     incapsula:
       - impervadns.net
+    raincdn:
+      - raincdn.cn
