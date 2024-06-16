@@ -25,8 +25,17 @@ cdn:
       - https://api.gcore.com/cdn/public-ip-list
     cachefly:
       - https://cachefly.cachefly.net/ips/rproxy.txt
-    akamai:
-      - https://raw.githubusercontent.com/SecOps-Institute/Akamai-ASN-and-IPs-List/master/akamai_ip_cidr_blocks.lst
+    scdn:
+      - https://raw.githubusercontent.com/xiaozhu2007/ShitCode/master/cdncheck/scdn.json
+    1e100cdn:
+      - https://raw.githubusercontent.com/xiaozhu2007/ShitCode/master/cdncheck/1e100cdn.net.json
+    moiu-cdn:
+      - https://raw.githubusercontent.com/xiaozhu2007/ShitCode/master/cdncheck/cdn.moiu.net.json
+    chcat:
+      - https://raw.githubusercontent.com/xiaozhu2007/ShitCode/master/cdncheck/chcat.json
+    qiudn:
+      - https://raw.githubusercontent.com/xiaozhu2007/ShitCode/master/cdncheck/qiudn.json
+    
 
 waf:
   asn:
