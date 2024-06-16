@@ -6,6 +6,8 @@ cdn:
   asn:
     leaseweb:
       - AS60626
+    gcore:
+      - AS199524
   urls:
     cloudfront:
       - https://d7uri8nf7uskq.cloudfront.net/tools/list-cloudfront-ips
