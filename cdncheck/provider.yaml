@@ -1,0 +1,101 @@
+# 这是 甜力怕 自我收集整理的一份 CDN 提供商表
+# 此表包含了多个小众 CDN 提供商
+# https://github.com/projectdiscovery/cdncheck/blob/main/cmd/generate-index/provider.yaml
+
+cdn:
+  asn:
+    leaseweb:
+      - AS60626
+  urls:
+    cloudfront:
+      - https://d7uri8nf7uskq.cloudfront.net/tools/list-cloudfront-ips
+    fastly:
+      - https://api.fastly.com/public-ip-list
+    google:
+      - https://www.gstatic.com/ipranges/goog.json
+    stackpath:
+      - https://k3t9x2h3.map2.ssl.hwcdn.net/ipblocks.txt
+
+waf:
+  asn:
+    akamai:
+      - AS12222
+      - AS16625
+      - AS16702
+      - AS17204
+      - AS18680
+      - AS18717
+      - AS20189
+      - AS20940
+      - AS21342
+      - AS21357
+      - AS21399
+      - AS22207
+      - AS22452
+      - AS23454
+      - AS23455
+      - AS23903
+      - AS24319
+      - AS26008
+      - AS30675
+      - AS31107
+      - AS31108
+      - AS31109
+      - AS31110
+      - AS31377
+      - AS33047
+      - AS33905
+      - AS34164
+      - AS34850
+      - AS35204
+      - AS35993
+      - AS35994
+      - AS36183
+      - AS39836
+      - AS43639
+      - AS55409
+      - AS55770
+      - AS63949
+      - AS133103
+      - AS393560
+    sucuri:
+      - AS30148
+  urls:
+    cloudflare:
+      - https://api.cloudflare.com/client/v4/ips
+
+cloud:
+  urls:
+    aws:
+      - https://ip-ranges.amazonaws.com/ip-ranges.json
+    google:
+      - https://www.gstatic.com/ipranges/cloud.json
+    oracle:
+      - https://docs.oracle.com/en-us/iaas/tools/public_ip_ranges.json
+    azure:
+      - https://www.microsoft.com/en-us/download/confirmation.aspx?id=56519
+    zscaler:
+      - https://api.config.zscaler.com/zscaler.net/cenr/json
+    office365:
+      - https://endpoints.office.com/endpoints/worldwide?clientrequestid=b10c5ed1-bad1-445f-b386-b919946339a7
+
+common:
+  fqdn:
+    amazon:
+      - cloudfront.net
+      - amazonaws.com
+    akamai:
+      - edgekey.net
+      - akamaiedge.net
+      - akamaitechnologies.com
+      - akamaihd.net
+      - edgesuite.net
+    cloudflare:
+      - cloudflare.com
+    fastly:
+      - fastly.net
+    edgecast:
+      - edgecastcdn.net
+      - edgesuite.net
+    incapsula:
+      - impervadns.net
