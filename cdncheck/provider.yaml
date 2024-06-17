@@ -12,6 +12,10 @@ cdn:
       - AS30633
     cdn77:
       - AS60068
+        qrator:
+      - AS197068
+      - AS200449
+      - AS51115
   urls:
     cloudfront:
       - https://d7uri8nf7uskq.cloudfront.net/tools/list-cloudfront-ips
@@ -39,6 +43,12 @@ cdn:
     qiudn:
       - https://raw.githubusercontent.com/xiaozhu2007/ShitCode/master/cdncheck/qiudn.json
   cidr:
+    qrator:
+      - "66.110.32.128/30"
+      - "83.234.15.112/30"
+      - "87.245.197.192/30"
+      - "185.94.108.0/24"
+      - "185.104.208.0/22"
     百度云加速:
       - "101.227.206.0/24"
       - "101.227.207.0/24"
@@ -324,6 +334,8 @@ common:
       - edgesuite.net
     incapsula:
       - impervadns.net
+    qrator:
+      - qrator.net
     raincdn:
       - raincdn.cn
     阿里云 CDN:
