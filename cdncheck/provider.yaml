@@ -3,6 +3,7 @@
 #
 # 鸣谢列表:
 # - https://github.com/y00k1sec/cdncheck/blob/main/cmd/generate-index/provider.yaml
+# - https://github.com/iis2h/cdncheck/blob/main/cmd/generate-index/provider.yaml
 # - https://github.com/projectdiscovery/cdncheck/blob/main/cmd/generate-index/provider.yaml
 
 cdn:
