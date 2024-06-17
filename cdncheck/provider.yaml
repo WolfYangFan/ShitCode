@@ -5,6 +5,7 @@
 # - https://github.com/y00k1sec/cdncheck/blob/main/cmd/generate-index/provider.yaml
 # - https://github.com/iis2h/cdncheck/blob/main/cmd/generate-index/provider.yaml
 # - https://github.com/projectdiscovery/cdncheck/blob/main/cmd/generate-index/provider.yaml
+# - https://github.com/catchpoint/WebPageTest.agent/blob/master/internal/optimization_checks.py#L67-L328
 
 cdn:
   asn:
@@ -354,12 +355,15 @@ common:
       - "alicloudwaf.com"
     腾讯云 CDN:
       - "cdn.dnsv1.com"
+      - cdn.dnsv1.com
+      - cdn.dnsv1.com.cn
+      - dsa.dnsv1.com
+      - dsa.dnsv1.com.cn
       - "qcloudcjgj.com"
       - "qcloudwzgj.com"
       - "qcloudzygj.com"
       - "qcloudwaf.com"
       - "cdntip.com"
-      - "dnsv1.com"
       - "tencdns.net"
       - "tdnsv5.com"
     网宿 CDN:
@@ -450,3 +454,159 @@ common:
       - "tzcdn.cn"
     蓝盾云 CDN:
       - "cloudfence.cn"
+    'Advanced Hosters CDN':
+      - pix-cdn.org
+    afxcdn.net:
+      - afxcdn.net
+    'Akamai China CDN':
+      - tl88.net
+    Alibaba:
+      - a.lahuashanbx.com
+      - cdn.gl102.com
+      - alicdn.com
+      - danuoyi.tbcache.com
+      - gl102.com
+      - kunlundns.com
+      - m.alikunlun.com
+      - m.alikunlun.net
+      - m.cdngslb.com
+      - m.kunlunaq.com
+      - m.kunlunAr.com
+      - m.kunlunCa.com
+      - m.kunlunCan.com
+      - m.kunlunea.com
+      - m.kunlungem.com
+      - m.kunlungr.com
+      - m.kunlunhuf.com
+      - m.kunlunle.com
+      - m.kunlunLi.com
+      - m.kunlunno.com
+      - m.kunlunpi.com
+      - m.kunlunra.com
+      - m.kunlunSa.com
+      - m.kunlunSc.com
+      - m.kunlunsl.com
+      - m.kunlunso.com
+      - m.kunlunTa.com
+      - m.kunlunVi.com
+      - m.kunlunwe.com
+      - mobgslb.tbcache.com
+      - w.alikunlun.com
+      - w.alikunlun.net
+      - w.cdngslb.com
+      - w.kunlunaq.com
+      - w.kunlunAr.com
+      - w.kunlunCa.com
+      - w.kunlunCan.com
+      - w.kunlunea.com
+      - w.kunlungem.com
+      - w.kunlungr.com
+      - w.kunlunhuf.com
+      - w.kunlunle.com
+      - w.kunlunLi.com
+      - w.kunlunno.com
+      - w.kunlunpi.com
+      - w.kunlunra.com
+      - w.kunlunSa.com
+      - w.kunlunSc.com
+      - w.kunlunsl.com
+      - w.kunlunso.com
+      - w.kunlunTa.com
+      - w.kunlunVi.com
+      - w.kunlunwe.com
+      - w.queniucdn.com
+      - w.queniucg.com
+      - w.queniueh.com
+      - w.queniuei.com
+      - w.queniufz.com
+      - w.queniugslb.com
+      - w.queniuhx.com
+      - w.queniujd.com
+      - w.queniujg.com
+      - w.queniunh.com
+      - w.queniunz.com
+      - w.queniurv.com
+      - w.queniuso.com
+      - w.queniusp.com
+      - w.queniusy.com
+      - w.queniutt.com
+      - w.queniuuf.com
+      - w.queniuuq.com
+      - w.queniuyk.com
+    Alimama:
+      - gslb.tbcache.com
+    'Amazon CloudFront':
+      - cloudfront.net
+    ArvanCloud:
+      - arvancloud.com
+    Aryaka:
+      - aads1.net
+      - aads-cn.net
+      - aads-cng.net
+    Automattic:
+      - wp.com
+      - wordpress.com
+      - gravatar.com
+    BelugaCDN:
+      - belugacdn.com
+      - belugacdn.link
+    BO.LT:
+      - bo.lt
+    BunnyCDN:
+      - b-cdn.net
+    Cachefly:
+      - cachefly.net
+    CDN77:
+      - cdn77.net
+      - cdn77.org
+    ChinaCache:
+      - ccgslb.com
+    ChinaNetCenter:
+      - lxdns.com
+      - wscdns.com
+      - wscloudcdn.com
+      - ourwebpic.com
+    cubeCDN:
+      - cubecdn.net
+    'DigitalOcean Spaces CDN':
+      - cdn.digitaloceanspaces.com
+    Edgecast:
+      - edgecastcdn.net
+      - systemcdn.net
+      - transactcdn.net
+      - v1cdn.net
+      - v2cdn.net
+      - v3cdn.net
+      - v4cdn.net
+      - v5cdn.net
+    Erstream:
+      - ercdn.net
+      - ercdn.com
+    Facebook:
+      - facebook.com
+      - facebook.net
+      - fbcdn.net
+      - cdninstagram.com
+    GoCache:
+      - cdn.gocache.net
+    'G-Core CDN':
+      - gcdn.co
+    jsDelivr:
+      - cdn.jsdelivr.net
+    Netlify:
+      - netlify.com
+    NGENIX:
+      - ngenix.net
+    StackPath:
+      - stackpathdns.com
+    Taobao:
+      - gslb.taobao.com
+      - tbcdn.cn
+      - taobaocdn.com
+    Twitter:
+      - twimg.com
+    Vercel:
+      - vercel.com
+      - vercel.app
+      - zeit.co
+      - dub.co
