@@ -3,28 +3,30 @@ messages:
   no_number: "%input% 不是一个有效的正整数."
   wrong_usage: "错误的指令用法!"
   player_not_exist: "玩家 %player% 不存在."
-  not_enough_money: "You don't have enough money to do that!"
-  player_not_enough_money: "%player% doesn't have enough money to do that!"
-  withdraw: "You were deducted %amount%$."
-  player_quit: "%player% has left the server."
-  no_console_command: "This command cannot be used in the console."
-  player_too_far_away: "%player% is too far away."
-  player_offline: "%player% is offline."
-  player_not_same_server: "%player% is not on the same server."
-  no_permission: "You do not have permission to use this command!"
-  disabled_feature: "Disabled feature."
-  take_payment_confirm: "Do you want to cover the entire cost?"
-  player_not_on_whitelisted_server: "%player% is not on a server where LunaticFamily is enabled. (%server%)"
-  accept: "Accept"
-  deny: "Deny"
-  confirm: "Confirm"
-  cancel: "Cancel"
-  player_name: "player"
-  background: "background"
-  color: "color"
-  no_uuid: "%input% is not a valid UUID."
+  not_enough_money: "您没有足够的钱这样做！"
+  player_not_enough_money: "%player% 没有足够的钱这样做！"
+  withdraw: "您被扣除了 %amount%。"
+  player_quit: "%player% 离开了服务器"
+  no_console_command: "这个命令不能在控制台中使用"
+  player_too_far_away: "%player% 离得太远。"
+  player_offline: "%player% 不在线。"
+  player_not_same_server: "%player% 不在同一个服务器上。"
+  no_permission: "您没有权限使用这个命令！"
+  disabled_feature: "功能已禁用。"
+  take_payment_confirm: "您想要承担全部费用吗？"
+  player_not_on_whitelisted_server: "%player% 不在启用了 结婚系统 的服务器上。（%server%）"
+
+  accept: "接受"
+  deny: "拒绝"
+  confirm: "确认"
+  cancel: "取消"
+  player_name: "玩家"
+  background: "背景"
+  color: "颜色"
+  no_uuid: "%input% 不是一个有效的 UUID"
+  
 help_header: "--- --- --- ---[%header%]--- --- --- ---"
-help_footer: "--- --- -[Page %page%/%pages%]- --- ---"
+help_footer: "--- --- -[第 %page% 页/共 %pages% 页]- --- ---"
 commands:
   adopt:
     aliases:
@@ -35,45 +37,45 @@ commands:
         aliases:
           - accept
         messages:
-          help: "&6/%command% %subcommand% &7- Accept an adoption request."
-          got_adopted: "You have been adopted by %player1% and %player2%!"
-          adopted_by_single: "You have been adopted by %player%!"
-          adopted: "You have adopted %player%."
-          parent_limit: "%player% cannot adopt another child. %player% has already reached the limit of two children."
-          no_request: "You have no adoption requests."
+          help: "&6/%command% %subcommand% &7- 接受一个收养请求。"
+          got_adopted: "您已被 %player1% 和 %player2% 收养！"
+          adopted_by_single: "您已被 %player% 收养！"
+          adopted: "您已经收养了 %player%。"
+          parent_limit: "%player% 无法再收养另一个孩子。%player% 已经达到了两个孩子的上限。"
+          no_request: "您没有收养请求。"
       deny:
         aliases:
           - deny
         messages:
-          help: "&6/%command% %subcommand% &7- Deny an adoption request."
-          deny: "You have denied the adoption request from %player%."
-          denied: "Sorry, %player% does not want to be adopted by you."
-          no_request: "You have no adoption requests."
+          help: "&6/%command% %subcommand% &7- 拒绝一个收养请求。"
+          deny: "您已拒绝了来自 %player% 的收养请求。"
+          denied: "抱歉，%player% 不想被您收养。"
+          no_request: "您没有收养请求。"
       kickout:
         aliases:
           - kickout
         messages:
-          help: "&6/%command% %subcommand% &b<%param%> &7- Kick your child out of the family."
-          specify_child: "Please specify a child."
-          kickout: "You have kicked %player% out of the house. This player is no longer adopted by you."
-          child: "%player% has kicked you out of the house. You are no longer adopted."
-          sibling: "%player% has kicked out your sibling from the house. You are now an only child."
-          partner: "%player1% has kicked out %player2% from the house. %player2% is no longer adopted by you."
-          confirm: "Please confirm that you want to kick out %player%!"
-          not_your_child: "%player% is not your child."
-          no_child: "You have no child."
-          cancel: "You haven't kicked out %player% after all."
+          help: "&6/%command% %subcommand% &b<%param%> &7- 将您的孩子踢出家庭。"
+          specify_child: "请指定一个孩子。"
+          kickout: "您已将 %player% 踢出了房子。这位玩家不再被您收养。"
+          child: "%player% 将您踢出了房子。您不再是收养的孩子。"
+          sibling: "%player% 将您的兄弟姐妹踢出了房子。您现在成了独生孩子。"
+          partner: "%player1% 将 %player2% 踢出了房子。%player2% 不再被您收养。"
+          confirm: "请确认您想要将 %player% 踢出！"
+          not_your_child: "%player% 不是您的孩子。"
+          no_child: "您没有孩子。"
+          cancel: "您毕竟没有将 %player% 踢出。"
       moveout:
         aliases:
           - moveout
         messages:
-          help: "&6/%command% %subcommand% &7- Move out from home and leave your parents."
-          moveout: "You have moved out. You are no longer adopted."
-          confirm: "Please confirm that you want to move out!"
-          child: "%player% has moved out. This player is no longer adopted by you."
-          no_parents: "You are not adopted."
-          sibling: "Your sibling has moved out. You are now an only child."
-          cancel: "You have canceled your move-out."
+          help: "&6/%command% %subcommand% &7- 从家中搬出并离开您的父母。"
+          moveout: "您已经搬出去了。您不再是收养的孩子。"
+          confirm: "请确认您想要搬出！"
+          child: "%player% 已经搬出去了。这位玩家不再被您收养。"
+          no_parents: "您没有被收养。"
+          sibling: "您的兄弟姐妹已经搬出去了。您现在成了独生孩子。"
+          cancel: "您已取消了搬出的决定。"
       propose:
         aliases:
           - propose
