@@ -1,21 +1,11 @@
 #!/bin/bash
 
-# 检查是否使用 -all 参数
-show_hidden=false
-if [[ "$1" == "-a" ]]; then
-    show_hidden=true
-fi
-
 # 定义一个函数来高亮显示文件
 highlight_file() {
     local file_index=$1
-    if $show_hidden; then
-        file_list=$(ls -lA | awk 'NR>1 {print$9}')
-    else
-        file_list=$(ls -l | awk 'NR>1 {print$9}')
-    fi
+    local selected_file=$(ls -l | awk 'NR>1 {print$9}' | sed "${file_index}q;d")
+    local file_list=$(ls -l | awk 'NR>1 {print$9}')
     local i=1
-    local selected_file=$(echo "$file_list" | sed "${file_index}q;d")
 
     echo "文件列表:"
 
@@ -86,17 +76,12 @@ while true; do
             exit 0
             ;;
         'ddy') # Delete, Delete? Yes!
-            selected_item=$(ls -lA | awk 'NR>1 {print$9}' | sed "${current_index}q;d")
-            if [ -d "$selected_item" ]; then
-                echo "无法删除目录: $selected_item"
-            else
-                rm "$selected_item"
-                echo "文件 '$selected_item' 已删除."
-            fi
+            selected_file=$(ls -l | awk 'NR>1 {print$9}' | sed "${current_index}q;d")
+            rm "$selected_file"
+            echo "文件 '$selected_file' 已删除."
             sleep 1
-            max_index=$(ls -lA | wc -l)
+            max_index=$(ls -l | wc -l)
             current_index=1
-
             ;;
         'nfn') # New File Now!
             tput cnorm # 显示光标
@@ -112,12 +97,7 @@ while true; do
             ;;
         '') # 回车
             selected_file=$(ls -l | awk 'NR>1 {print$9}' | sed "${current_index}q;d")
-            if [ -d "$selected_item" ]; then
-                # 切换到目录
-                cd "$selected_item" || exit
-                max_index=$(ls -lA | wc -l)
-                current_index=1
-            elif [ -x "$selected_file" ]; then
+            if [ -x "$selected_file" ]; then
                 echo "执行文件: $selected_file"
                 # 执行
                 "./$selected_file"
