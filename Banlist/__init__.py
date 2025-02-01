@@ -145,12 +145,12 @@ async def handle_group_decrease(bot: Bot, event: GroupDecreaseNoticeEvent):
     banlist = load_banlist()
     superusers = get_driver().config.superusers
 
-    if event.sub_type == "kick":
+    if event.sub_type == "kick_me":
         banlist.add(event.group_id)
         save_banlist(banlist)
-        msg = f"🚫 机器人被踢出群 {event.group_id}"
+        msg = f"🚫 机器人被踢出群 {event.group_id}，操作者：{event.operator_id}"
     else:
-        msg = f"⚠️ 机器人主动退出群 {event.group_id}，操作者：{event.operator_id}"
+        msg = f"⚠️ 机器人主动退出群或出现错误 {event.group_id}"
 
     for user_id in superusers:
         await send_private(bot, int(user_id), msg)
