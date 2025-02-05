@@ -6,7 +6,7 @@ from nonebot.params import CommandArg
 from nonebot.rule import to_me
 
 # 创建命令处理器
-nexttrace_cmd = on_command("nexttrace", rule=to_me(), aliases={"nt"}, priority=5)
+nexttrace_cmd = on_command("nexttrace", aliases={"nt"}, priority=10)
 
 def is_valid_target(target: str) -> bool:
     """验证目标地址有效性（支持 IPv4/IPv6/域名）"""
@@ -67,10 +67,10 @@ async def handle_nexttrace(args: Message = CommandArg()):
 
     except subprocess.TimeoutExpired:
         await nexttrace_cmd.finish("追踪请求超时，请稍后再试")
-    except FileNotFoundError:
-        await nexttrace_cmd.finish("nexttrace 工具未安装或不在 PATH 环境变量中")
     except subprocess.CalledProcessError as e:
         error_msg = f"追踪失败：{e.stderr.strip()}" if e.stderr else "追踪过程发生未知错误"
         await nexttrace_cmd.finish(error_msg)
+    except FinishedException:
+        break
     except Exception as e:
         await nexttrace_cmd.finish(f"系统错误：{str(e)}")
