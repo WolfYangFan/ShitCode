@@ -69,7 +69,8 @@ async def handle_nexttrace(args: Message = CommandArg()):
         else:
             logger.warning(f"⚠️ 未找到追踪地图，目标：{target}")
             await nexttrace_cmd.finish("⚠️ 未找到追踪地图，可能是目标不可达或服务暂时不可用")
-
+    except FinishedException:
+        pass
     except subprocess.TimeoutExpired:
         logger.error(f"💥 追踪超时，目标：{target}")
         await nexttrace_cmd.finish("❌ 追踪请求超时，请稍后再试")
