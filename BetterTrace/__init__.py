@@ -1,12 +1,12 @@
 import re
 import subprocess
-from nonebot import on_command
+from nonebot import on_command, logger
 from nonebot.adapters.onebot.v11 import Message
 from nonebot.params import CommandArg
 from nonebot.rule import to_me
 
 # 创建命令处理器
-nexttrace_cmd = on_command("nexttrace", aliases={"nt"}, priority=10)
+nexttrace_cmd = on_command("nexttrace", aliases={"nt"}, priority=5)
 
 def is_valid_target(target: str) -> bool:
     """验证目标地址有效性（支持 IPv4/IPv6/域名）"""
@@ -39,11 +39,14 @@ async def handle_nexttrace(args: Message = CommandArg()):
     
     # 输入校验
     if not target:
-        await nexttrace_cmd.finish("请输入追踪目标，格式为：nexttrace <IP/域名>")
+        logger.debug("🐛 用户未输入目标地址")
+        await nexttrace_cmd.finish("❌ 请输入追踪目标，格式为：nexttrace <IP/域名>")
         
     if not is_valid_target(target):
-        await nexttrace_cmd.finish("无效的目标地址，请提供有效的 IPv4/IPv6 地址或域名")
+        logger.warning(f"⚠️ 无效的目标地址：{target}")
+        await nexttrace_cmd.finish("❌ 无效的目标地址，请提供有效的 IPv4/IPv6 地址或域名")
 
+    logger.info(f"🚀 开始追踪目标：{target}")
     try:
         # 执行 nexttrace 命令（自动识别 IPv4/IPv6）
         result = subprocess.run(
@@ -61,16 +64,22 @@ async def handle_nexttrace(args: Message = CommandArg()):
         )
 
         if map_url:
-            await nexttrace_cmd.finish(f"追踪地图：{map_url.group()}")
+            logger.success(f"✅ 追踪成功，地图链接：{map_url.group()}")
+            await nexttrace_cmd.finish(f"✅ 追踪地图：{map_url.group()}")
         else:
-            await nexttrace_cmd.finish("未找到追踪地图，可能是目标不可达或服务暂时不可用")
+            logger.warning(f"⚠️ 未找到追踪地图，目标：{target}")
+            await nexttrace_cmd.finish("⚠️ 未找到追踪地图，可能是目标不可达或服务暂时不可用")
 
     except subprocess.TimeoutExpired:
-        await nexttrace_cmd.finish("追踪请求超时，请稍后再试")
+        logger.error(f"💥 追踪超时，目标：{target}")
+        await nexttrace_cmd.finish("❌ 追踪请求超时，请稍后再试")
+    except FileNotFoundError:
+        logger.error("💥 nexttrace 工具未安装或不在 PATH 环境变量中")
+        await nexttrace_cmd.finish("❌ 追踪失败，请联系管理员")
     except subprocess.CalledProcessError as e:
-        error_msg = f"追踪失败：{e.stderr.strip()}" if e.stderr else "追踪过程发生未知错误"
-        await nexttrace_cmd.finish(error_msg)
-    except FinishedException:
-        break
+        error_msg = f"💥 追踪失败：{e.stderr.strip()}" if e.stderr else "💥 追踪过程发生未知错误"
+        logger.error(error_msg)
+        await nexttrace_cmd.finish(f"❌ 追踪失败：{e.stderr.strip()}" if e.stderr else "❌ 追踪过程发生未知错误")
     except Exception as e:
-        await nexttrace_cmd.finish(f"系统错误：{str(e)}")
+        logger.error(f"💥 系统错误：{str(e)}")
+        await nexttrace_cmd.finish(f"❌ 系统错误：{str(e)}")
