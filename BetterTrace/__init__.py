@@ -1,6 +1,7 @@
 import re
 import subprocess
 from nonebot import on_command, logger
+from nonebot.exception import FinishedException
 from nonebot.adapters.onebot.v11 import Message
 from nonebot.params import CommandArg
 from nonebot.rule import to_me
