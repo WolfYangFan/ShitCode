@@ -1,4 +1,5 @@
 import json
+import asyncio
 from pathlib import Path
 from typing import Set, Optional
 
@@ -8,9 +9,9 @@ from nonebot.adapters.onebot.v11 import (
     GroupDecreaseNoticeEvent,
     GroupRequestEvent,
     MessageEvent,
+    GroupIncreaseNoticeEvent,
 )
 from nonebot.params import CommandArg
-from nonebot.rule import to_me
 
 # 配置文件路径
 BANLIST_PATH = Path("data/group_banlist.json")
@@ -35,7 +36,7 @@ def save_banlist(banlist: Set[int]):
 
 
 # 黑名单管理命令
-banlist_cmd = on_command("banlist", aliases={"黑名单管理"}, rule=to_me(), priority=5, block=True)
+banlist_cmd = on_command("banlist", aliases={"黑名单管理"}, priority=5, block=True)
 
 @banlist_cmd.handle()
 async def handle_banlist(bot: Bot, event: MessageEvent, args: str = CommandArg()):
@@ -150,7 +151,7 @@ async def handle_group_decrease(bot: Bot, event: GroupDecreaseNoticeEvent):
         save_banlist(banlist)
         msg = f"🚫 机器人被踢出群 {event.group_id}，操作者：{event.operator_id}"
     else:
-        msg = f"⚠️ 机器人主动退出群或出现错误 {event.group_id}"
+        msg = f"⚠️ 机器人主动退出群 {event.group_id}"
 
     for user_id in superusers:
         await send_private(bot, int(user_id), msg)
@@ -172,9 +173,30 @@ async def handle_group_request(bot: Bot, event: GroupRequestEvent):
             sub_type=event.sub_type,
             approve=False
         )
-        report_msg = f"⛔ 已拒绝黑名单群 {event.group_id} 的加群邀请"
+        report_msg = f"⛔ 已拒绝黑名单群 {event.group_id} 的加群邀请\n邀请者：{event.operator_id}"
     else:
         report_msg = f"📩 收到新加群邀请\n群号：{event.group_id}\n邀请者：{event.user_id}"
+
+    for user_id in superusers:
+        await send_private(bot, int(user_id), report_msg)
+
+group_increase = on_notice(priority=1, block=False)
+
+@group_increase.handle()
+async def handle_group_increase(bot: Bot, event: GroupIncreaseNoticeEvent):
+    if event.sub_type != "invite":
+        return
+    if event.user_id != event.self_id:
+        return
+
+    banlist = load_banlist()
+    superusers = get_driver().config.superusers
+    if event.group_id in banlist:
+        await asyncio.sleep(1)
+        await bot.set_group_leave(group_id=event.group_id)
+        report_msg = f"⛔ 已拒绝黑名单群 {event.group_id} 的加群邀请\n邀请者：{event.operator_id}"
+    else:
+        report_msg = f"📩 收到新加群邀请\n群号：{event.group_id}\n邀请者：{event.operator_id}"
 
     for user_id in superusers:
         await send_private(bot, int(user_id), report_msg)
