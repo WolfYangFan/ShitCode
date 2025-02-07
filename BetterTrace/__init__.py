@@ -41,11 +41,11 @@ async def handle_nexttrace(args: Message = CommandArg()):
     # 输入校验
     if not target:
         logger.debug("🐛 用户未输入目标地址")
-        await nexttrace_cmd.finish("❌ 请输入追踪目标，格式为：nexttrace <IP/域名>")
+        await nexttrace_cmd.finish("❌ 请输入追踪目标，格式为：nexttrace <IP>")
         
     if not is_valid_target(target):
         logger.warning(f"⚠️ 无效的目标地址：{target}")
-        await nexttrace_cmd.finish("❌ 无效的目标地址，请提供有效的 IPv4/IPv6 地址或域名")
+        await nexttrace_cmd.finish("❌ 无效的目标地址，请提供有效的 IPv4/IPv6 地址")
 
     logger.info(f"🚀 开始追踪目标：{target}")
     try:
